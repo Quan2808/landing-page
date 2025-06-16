@@ -1,7 +1,7 @@
 import useIntersectionObserver from "../hooks/useIntersectionObserver.js";
 
 export default function IntroduceSection() {
-  const [sectionRef, isVisible] = useIntersectionObserver(0.8);
+  const [sectionRef, isVisible] = useIntersectionObserver(0.6);
 
   return (
     <section
