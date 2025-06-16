@@ -43,8 +43,8 @@ export default function IntroduceSection() {
             }`}
           >
             <img
-              alt="Judith Black"
-              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+              alt="Thien An"
+              src="https://hopamchuan.com/node/get_artist_image/thien_an"
               className={`mx-auto size-10 rounded-full transition-all duration-1000 ease-in-out transform delay-500 ${
                 isVisible
                   ? "opacity-100 translate-y-0"
@@ -52,7 +52,7 @@ export default function IntroduceSection() {
               }`}
             />
             <div className="mt-4 flex items-center justify-center space-x-3 text-base">
-              <div className="font-semibold text-gray-900">Judith Black</div>
+              <div className="font-semibold text-gray-900">Thien An</div>
               <svg
                 width={3}
                 height={3}
