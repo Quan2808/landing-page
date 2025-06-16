@@ -1,25 +1,50 @@
+import useIntersectionObserver from "../hooks/useIntersectionObserver.js";
+
 export default function IntroduceSection() {
+  const [sectionRef, isVisible] = useIntersectionObserver(0.8);
+
   return (
-    <section className="relative isolate overflow-hidden bg-gray-50 px-6 py-24 sm:py-32 lg:px-8">
+    <section
+      ref={sectionRef}
+      className="relative isolate overflow-hidden bg-gray-50 px-6 py-24 sm:py-32 lg:px-8"
+    >
       <div className="mx-auto max-w-2xl lg:max-w-4xl">
         <img
-          alt=""
+          alt="FPT Polytechnic Logo"
           src="https://cdn.haitrieu.com/wp-content/uploads/2023/05/Logo-Truong-Cao-dang-FPT-Polytechnic.png"
-          className="mx-auto h-12"
+          className={`mx-auto h-12 transition-all duration-1000 ease-in-out transform ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
         />
         <figure className="mt-10">
-          <blockquote className="text-center text-xl/8 font-semibold text-gray-900 sm:text-2xl/9">
+          <blockquote
+            className={`text-center text-xl/8 font-semibold text-gray-900 sm:text-2xl/9 transition-transform duration-1000 ease-in-out transform ${
+              isVisible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 -translate-x-20"
+            }`}
+          >
             <p>
               “Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
               expedita voluptas culpa sapiente alias molestiae. Numquam corrupti
               in laborum sed rerum et corporis.”
             </p>
           </blockquote>
-          <figcaption className="mt-10">
+          <figcaption
+            className={`mt-10 transition-transform duration-1000 ease-in-out transform ${
+              isVisible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 translate-x-20"
+            }`}
+          >
             <img
-              alt=""
+              alt="Judith Black"
               src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-              className="mx-auto size-10 rounded-full"
+              className={`mx-auto size-10 rounded-full transition-all duration-1000 ease-in-out transform delay-500 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              }`}
             />
             <div className="mt-4 flex items-center justify-center space-x-3 text-base">
               <div className="font-semibold text-gray-900">Judith Black</div>
