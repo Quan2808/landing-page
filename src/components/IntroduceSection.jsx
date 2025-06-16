@@ -25,9 +25,14 @@ export default function IntroduceSection() {
             }`}
           >
             <p>
-              “Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
-              expedita voluptas culpa sapiente alias molestiae. Numquam corrupti
-              in laborum sed rerum et corporis.”
+              “In life, there are times when we must part ways, but the
+              responsible and hopeful message that Thien An sends to Jack moves
+              the reader. It's not just a farewell, but also a profound
+              expression of responsibility – knowing that they will no longer be
+              together but still wishing the other person well and continued
+              effort. At the same time, it's a message of hope: believing that
+              even though they are no longer together, the other person can
+              still succeed and be happy…”
             </p>
           </blockquote>
           <figcaption

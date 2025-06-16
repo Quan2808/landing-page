@@ -10,7 +10,10 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "publish": "npm run build && npm run push-ghpages",
+    "push-ghpages": "gh-pages -d dist -m \"chore: publish landing page\"",
+    "commit": "git add . && git commit -m \"chore: update landing page content\""
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.10",
