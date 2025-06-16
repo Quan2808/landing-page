@@ -27,7 +27,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="relative isolate overflow-hidden px-6 h-screen sm:px-16 md:pt-24 lg:px-24 ">
+    <section className="relative isolate overflow-hidden px-6 h-screen sm:px-16 md:pt-24 lg:px-24 ">
       {/* Background Image */}
       <img
         alt="Hero Background"
@@ -64,7 +64,7 @@ const HeroSection = () => {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
