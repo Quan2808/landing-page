@@ -13,7 +13,7 @@
     "deploy": "gh-pages -d dist",
     "publish": "npm run build && npm run push-ghpages",
     "push-ghpages": "gh-pages -d dist -m \"chore: publish landing page\"",
-    "commit": "git add . && git commit -m \"chore: update landing page content\""
+    "commit": "git add . && git commit -m \"chore: update landing page content\" && git push"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.10",
