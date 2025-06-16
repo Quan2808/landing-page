@@ -1,7 +1,7 @@
 import useIntersectionObserver from "../hooks/useIntersectionObserver.js";
 
 export default function TeamsSection() {
-  const [sectionRef, isVisible] = useIntersectionObserver(0.8);
+  const [sectionRef, isVisible] = useIntersectionObserver(0.6);
 
   const teamMembers = [
     {
@@ -9,7 +9,7 @@ export default function TeamsSection() {
       src: "https://images2.thanhnien.vn/528068263637045248/2025/5/26/edit-48427799012203294996640565770072566130465660n-174827854706467715024.jpeg",
       alt: "Team member Trịnh Trần Phương Tứn",
       className: "w-44 h-56 rounded-2xl object-cover md:mt-20 min-[450px]:mr-0",
-      delay: "delay-[1200ms]",
+      delay: "delay-[1000ms]",
     },
     {
       name: "Jane Smith",
@@ -17,7 +17,7 @@ export default function TeamsSection() {
       alt: "Team member Jane Smith",
       className:
         "w-44 h-56 rounded-2xl object-cover min-[450px]:ml-0 md:mx-auto",
-      delay: "delay-[1400ms]",
+      delay: "delay-[1200ms]",
     },
     {
       name: "Alex Johnson",
@@ -25,7 +25,7 @@ export default function TeamsSection() {
       alt: "Team member Alex Johnson",
       className:
         "w-44 h-56 rounded-2xl object-cover md:mt-20 min-[450px]:mr-0 md:ml-0",
-      delay: "delay-[1600ms]",
+      delay: "delay-[1400ms]",
     },
     {
       name: "Emily Davis",
@@ -33,7 +33,7 @@ export default function TeamsSection() {
       alt: "Team member Emily Davis",
       className:
         "w-44 h-56 rounded-2xl object-cover min-[450px]:ml-0 md:mr-0 md:ml-auto",
-      delay: "delay-[1800ms]",
+      delay: "delay-[1600ms]",
     },
     {
       name: "Michael Brown",
@@ -41,20 +41,23 @@ export default function TeamsSection() {
       alt: "Team member Michael Brown",
       className:
         "w-44 h-56 rounded-2xl object-cover md:-mt-20 min-[450px]:mr-0 md:mx-auto",
-      delay: "delay-[2000ms]",
+      delay: "delay-[1800ms]",
     },
     {
       name: "Sarah Wilson",
       src: "https://scontent.fdad2-1.fna.fbcdn.net/v/t51.75761-15/505433084_18125454988445889_8437539079780816781_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=7rpMiXX6KhQQ7kNvwGu4voe&_nc_oc=Adnn4zdTD-tDsVVPZW6H4wMVqD41ULWi0LNjAKlRmfrYfV0L2E-9ifEM-4wZxYKtHo4&_nc_zt=23&_nc_ht=scontent.fdad2-1.fna&_nc_gid=5mMUUje67dSUUUns-U94xQ&oh=00_AfOfWhZ-oqo4uF06wqAYOkhRhKaGbeD2BAkWf1R5pF1VFA&oe=6855FCD5",
       alt: "Team member Sarah Wilson",
       className: "w-44 h-56 rounded-2xl object-cover min-[450px]:ml-0 md:mr-0",
-      delay: "delay-[2200ms]",
+      delay: "delay-[2000ms]",
     },
   ];
 
   return (
-    <section ref={sectionRef} className="py-24 bg-gray-50">
-      <div className="mx-auto max-w-7xl px-4 sm:px-16 md:pt-24 lg:px-24">
+    <section
+      ref={sectionRef}
+      className="relative isolate overflow-hidden px-6 py-24 sm:py-32 lg:px-8"
+    >
+      <div className="mx-auto max-w-2xl lg:max-w-4xl">
         <div className="flex justify-between items-center flex-col lg:flex-row md:mt-20">
           <div className="w-full lg:w-1/2">
             <h2

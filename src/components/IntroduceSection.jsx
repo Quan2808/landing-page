@@ -6,7 +6,7 @@ export default function IntroduceSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative isolate overflow-hidden bg-gray-50 px-6 py-24 sm:py-32 lg:px-8"
+      className="relative isolate overflow-hidden px-6 py-24 sm:py-32 lg:px-8"
     >
       <div className="mx-auto max-w-2xl lg:max-w-4xl">
         <img
