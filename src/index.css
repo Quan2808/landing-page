@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Netflix Sans", "Inter", sans-serif;
+}
+
+.text-accent {
+  color: #eaa257;
 }
