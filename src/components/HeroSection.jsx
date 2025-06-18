@@ -1,74 +1,124 @@
-import useCountdownToRelease from "../hooks/useCountdownToRelease";
+import { Play, Pause, Volume2, VolumeX, Maximize2 } from "lucide-react";
+import useVideoControls from "../hooks//useVideoControls";
+import useCountdownToRelease from "../hooks//useCountdownToRelease";
 
 const HeroSection = () => {
+  const {
+    videoRef,
+    isPlaying,
+    isMuted,
+    showThumbnail,
+    togglePlay,
+    toggleMute,
+    toggleFullscreen,
+    handleVideoEnd,
+  } = useVideoControls();
   const timeLeft = useCountdownToRelease("2025-07-23T00:00:00");
 
   return (
-    <section className="relative isolate overflow-hidden px-6 h-screen sm:px-16 md:pt-24 lg:px-24">
-      {/* Background Image */}
-      <img
-        alt="Hero Background"
-        src="https://pianofingers.vn/wp-content/uploads/2024/04/Sheet-piano-Thie%CC%82n-Ly%CC%81-O%CC%9Bi-Jack-2.jpeg"
-        className="absolute inset-0 w-full h-full object-cover transform scale-105 transition-transform duration-10000 ease-in-out"
-        aria-hidden="true"
-      />
-      {/* Overlay for text readability */}
-      <div className="absolute inset-0 bg-gray-900/70"></div>
-      {/* Fade-out effect at the bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-900 to-transparent pointer-events-none"></div>
+    <section className="relative isolate overflow-hidden h-screen">
+      {/* Video Background */}
+      <div className="absolute inset-0">
+        {showThumbnail && (
+          <img
+            alt="Video Thumbnail"
+            src="https://pianofingers.vn/wp-content/uploads/2024/04/Sheet-piano-Thie%CC%82n-Ly%CC%81-O%CC%9Bi-Jack-2.jpeg"
+            className="absolute inset-0 w-full h-full object-cover"
+            aria-hidden="true"
+          />
+        )}
+        <video
+          ref={videoRef}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+            showThumbnail ? "opacity-0" : "opacity-100"
+          }`}
+          muted={isMuted}
+          playsInline
+          onEnded={handleVideoEnd}
+          onPlay={() => !showThumbnail}
+        >
+          <source
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
 
-      {/* Content Container with Bottom Border */}
-      <div className="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8 border-b-4 border-white">
-        <div className="relative isolate overflow-hidden px-6 pt-16 sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
-          {/* Text Content */}
-          <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
-            <h2 className="text-5xl font-semibold tracking-tight text-balance text-white">
+      {/* Overlay for better contrast */}
+      <div className="absolute inset-0 bg-black/40"></div>
+
+      {/* Content positioned at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-12">
+        <div className="max-w-7xl mx-auto flex items-end justify-between">
+          {/* Text Content - Bottom Left */}
+          <div className="max-w-2xl">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4">
               DREAM DRAFT
-            </h2>
-            <p className="mt-6 text-2xl/8 text-pretty text-gray-300">
+            </h1>
+            <p className="text-xl sm:text-2xl text-gray-200 mb-4">
               Đề tài: Màu Của Hòa Bình
             </p>
-            <p className="mt-6 text-2xl/8 text-pretty text-gray-300">
+            <p className="text-lg sm:text-xl text-gray-300">
               {timeLeft ? (
                 <>
                   COMING SOON IN:{" "}
-                  <span className="font-mono">
+                  <span className="font-mono font-semibold text-white">
                     {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m{" "}
                     {timeLeft.seconds}s
                   </span>
                 </>
               ) : (
-                "WE'RE LIVE!"
+                <span className="text-green-400 font-semibold">
+                  WE'RE LIVE!
+                </span>
               )}
             </p>
           </div>
-          {/* Video Content (YouTube Embed) */}
-          <div className="relative mt-16 h-80 lg:mt-8 lg:flex-auto">
-            <iframe
-              className="absolute top-0 left-0 w-full max-w-[36rem] rounded-md bg-white/5 ring-1 ring-white/10 sm:w-[36rem] h-full"
-              src="https://www.youtube.com/embed/YG2qaxd6YL4?autoplay=1&loop=1&mute=0&playsinline=1&playlist=YG2qaxd6YL4"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
 
-          {/* Image Content */}
-          {/* <div className="relative mt-16 h-80 lg:mt-8 lg:flex-auto">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute top-0 left-0 w-full max-w-[36rem] rounded-md bg-white/5 ring-1 ring-white/10 sm:w-[36rem] object-cover h-full"
+          {/* Video Controls - Bottom Right */}
+          <div className="flex items-center space-x-4">
+            {/* Play/Pause Button */}
+            <button
+              onClick={togglePlay}
+              className="group relative flex items-center justify-center w-14 h-14 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full transition-all duration-200 hover:scale-110"
+              aria-label={isPlaying ? "Pause video" : "Play video"}
             >
-              <source src="https://youtu.be/YG2qaxd6YL4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div> */}
+              {isPlaying ? (
+                <Pause className="w-6 h-6 text-white" />
+              ) : (
+                <Play className="w-6 h-6 text-white ml-1" />
+              )}
+              <div className="absolute inset-0 rounded-full ring-2 ring-white/50 group-hover:ring-white/70 transition-colors"></div>
+            </button>
+
+            {/* Volume Button */}
+            <button
+              onClick={toggleMute}
+              className="group relative flex items-center justify-center w-12 h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full transition-all duration-200 hover:scale-110"
+              aria-label={isMuted ? "Unmute video" : "Mute video"}
+            >
+              {isMuted ? (
+                <VolumeX className="w-5 h-5 text-white" />
+              ) : (
+                <Volume2 className="w-5 h-5 text-white" />
+              )}
+            </button>
+
+            {/* Fullscreen Button */}
+            <button
+              onClick={toggleFullscreen}
+              className="group relative flex items-center justify-center w-12 h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full transition-all duration-200 hover:scale-110"
+              aria-label="Enter fullscreen"
+            >
+              <Maximize2 className="w-5 h-5 text-white" />
+            </button>
+          </div>
         </div>
       </div>
+
+      {/* Gradient overlay at bottom for better text readability */}
+      <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none"></div>
     </section>
   );
 };
