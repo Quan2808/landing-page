@@ -34,6 +34,13 @@ const useVideoControls = () => {
       } else if (videoRef.current.mozRequestFullScreen) {
         videoRef.current.mozRequestFullScreen();
       }
+
+      // If not already playing, trigger playback
+      if (!isPlaying) {
+        videoRef.current.play();
+        setIsPlaying(true);
+        setShowThumbnail(false);
+      }
     }
   };
 

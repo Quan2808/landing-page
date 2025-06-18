@@ -1,6 +1,6 @@
 import { Play, Pause, Volume2, VolumeX, Maximize2 } from "lucide-react";
-import useVideoControls from "../hooks//useVideoControls";
-import useCountdownToRelease from "../hooks//useCountdownToRelease";
+import useVideoControls from "../hooks/useVideoControls";
+import useCountdownToRelease from "../hooks/useCountdownToRelease";
 
 const HeroSection = () => {
   const {
@@ -81,15 +81,15 @@ const HeroSection = () => {
             {/* Play/Pause Button */}
             <button
               onClick={togglePlay}
-              className="group relative flex items-center justify-center w-14 h-14 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full transition-all duration-200 hover:scale-110"
+              className="group relative flex items-center justify-center w-12 h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full transition-all duration-200 hover:scale-110"
               aria-label={isPlaying ? "Pause video" : "Play video"}
             >
               {isPlaying ? (
-                <Pause className="w-6 h-6 text-white" />
+                <Pause className="w-5 h-5 text-white" />
               ) : (
-                <Play className="w-6 h-6 text-white ml-1" />
+                <Play className="w-5 h-5 text-white ml-1" />
               )}
-              <div className="absolute inset-0 rounded-full ring-2 ring-white/50 group-hover:ring-white/70 transition-colors"></div>
+              <div className="absolute inset-0 rounded-full ring-2 ring-white/50 opacity-0 group-hover:opacity-100 group-hover:ring-white/70 transition-all duration-200"></div>
             </button>
 
             {/* Volume Button */}
@@ -103,6 +103,7 @@ const HeroSection = () => {
               ) : (
                 <Volume2 className="w-5 h-5 text-white" />
               )}
+              <div className="absolute inset-0 rounded-full ring-2 ring-white/50 opacity-0 group-hover:opacity-100 group-hover:ring-white/70 transition-all duration-200"></div>
             </button>
 
             {/* Fullscreen Button */}
@@ -112,6 +113,7 @@ const HeroSection = () => {
               aria-label="Enter fullscreen"
             >
               <Maximize2 className="w-5 h-5 text-white" />
+              <div className="absolute inset-0 rounded-full ring-2 ring-white/50 opacity-0 group-hover:opacity-100 group-hover:ring-white/70 transition-all duration-200"></div>
             </button>
           </div>
         </div>

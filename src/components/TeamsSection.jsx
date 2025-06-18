@@ -83,7 +83,7 @@ export default function TeamsSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative isolate overflow-hidden px-6 py-24 sm:py-32 lg:px-8  from-slate-50 to-blue-50"
+      className="relative isolate overflow-hidden px-6 py-24 sm:py-32 lg:px-8 from-slate-50 to-blue-50"
     >
       {/* Background decoration */}
       <div className="absolute inset-0 -z-10">
@@ -113,8 +113,6 @@ export default function TeamsSection() {
                 </span>{" "}
                 Team
               </h2>
-
-              <div className="absolute -top-4 -left-4 w-8 h-8 bg-blue-200 rounded-full opacity-60 animate-pulse"></div>
             </div>
 
             {/* Team stats - positioned above the paragraph */}
