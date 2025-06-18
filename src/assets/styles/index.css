@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 body {
-  font-family: "Netflix Sans", "Inter", sans-serif;
+  font-family: "Netflix Sans", sans-serif;
   background-image: url("/src/assets/images/glass-background.png");
   background-size: cover;
   background-repeat: no-repeat;

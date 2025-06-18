@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import TeamsSection from "./components/TeamsSection";
 import IntroduceSection from "./components/IntroduceSection";
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <div className="relative">
+      <Header />
       {/* Sections */}
       <div id="hero" className="min-h-screen">
         <HeroSection />
