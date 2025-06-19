@@ -9,9 +9,9 @@ import TechnicalSection from "./components/TechnicalSection";
 function App() {
   const { NavigationButtons } = useSectionNavigation([
     "hero",
-    "TechnicalSection",
     "introduce",
     "teams",
+    "Technical",
   ]);
 
   return (
@@ -23,10 +23,6 @@ function App() {
         <HeroSection />
       </div>
 
-      <div id="TechnicalSection" className="min-h-screen">
-        <TechnicalSection></TechnicalSection>
-      </div>
-
       <div id="introduce" className="min-h-screen">
         {/* <TechnicalSection></TechnicalSection> */}
         <IntroduceSection />
@@ -34,6 +30,10 @@ function App() {
 
       <div id="teams" className="min-h-screen">
         <TeamsSection />
+      </div>
+
+      <div id="Technical" className="min-h-screen">
+        <TechnicalSection></TechnicalSection>
       </div>
 
       {/* Navigation buttons */}
