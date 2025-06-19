@@ -9,7 +9,7 @@ const technicalLogos = [
   {
     id: 1,
     alt: "Character Creator 4",
-    src: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=150&h=48&fit=crop&crop=center",
+    src: "https://www.reallusion.com/about/includes/image/press_resource_product/cc/character-creator-1000x1000_colorlogo_word.png",
     fallbackSrc: "https://via.placeholder.com/150x48/6366f1/white?text=CC4",
     description: "Modeling and texturing",
     category: "3D Modeling",
@@ -41,7 +41,7 @@ const technicalLogos = [
   {
     id: 5,
     alt: "iClone 8",
-    src: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=150&h=48&fit=crop&crop=center",
+    src: "https://www.reallusion.com/about/includes/image/press_resource_product/ic/iclone8_1000x1000_whitebg_colorlogo_word_version.png",
     fallbackSrc: "https://via.placeholder.com/150x48/7c3aed/white?text=iClone",
     description: "Animation",
     category: "Animation",

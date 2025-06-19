@@ -37,7 +37,7 @@ export default function TechnicalSection() {
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-center">
           <div className="lg:pt-4 lg:pr-8">
             <div className="lg:max-w-lg">
-              {/* Badge */}
+              {/* Badge
               <div
                 className={`inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 border border-indigo-200 rounded-full text-sm font-semibold text-indigo-700 mb-6 transition-all duration-1000 ease-out transform ${
                   isVisible
@@ -47,7 +47,7 @@ export default function TechnicalSection() {
               >
                 <SparklesIcon className="w-4 h-4" />
                 Streamlined Production
-              </div>
+              </div> */}
 
               {/* Main heading */}
               <h2
