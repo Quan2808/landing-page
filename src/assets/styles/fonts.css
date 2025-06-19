@@ -25,3 +25,22 @@
   font-weight: 900;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Circe Rounded Bold";
+  src: url("https://db.onlinewebfonts.com/t/c78e6337486a2d8360b384b254a208d9.eot");
+  src: url("https://db.onlinewebfonts.com/t/c78e6337486a2d8360b384b254a208d9.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/c78e6337486a2d8360b384b254a208d9.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/c78e6337486a2d8360b384b254a208d9.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/c78e6337486a2d8360b384b254a208d9.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/c78e6337486a2d8360b384b254a208d9.svg#Circe Rounded Bold")
+      format("svg");
+}
+
+.font-circe-bold {
+  font-family: "Circe Rounded Bold", sans-serif;
+}

@@ -11,11 +11,41 @@ export default function IntroduceSection() {
       <div className="mx-auto max-w-2xl lg:max-w-4xl">
         <img
           alt="FPT Polytechnic Logo"
-          src="https://cdn.haitrieu.com/wp-content/uploads/2023/05/Logo-Truong-Cao-dang-FPT-Polytechnic.png"
+          src="./src/assets/images/logo.png"
           className={`mx-auto h-12 transition-all duration-1000 ease-in-out transform ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         />
+        <figcaption
+          className={`mt-10 transition-transform duration-1000 ease-in-out transform ${
+            isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"
+          }`}
+        >
+          {/* <img
+            alt="Thien An"
+            src="https://hopamchuan.com/node/get_artist_image/thien_an"
+            className={`mx-auto size-10 rounded-full transition-all duration-1000 ease-in-out transform delay-500 ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+          /> */}
+          <div className="mt-4 flex items-center justify-center space-x-3 text-base">
+            <div className="font-semibold text-gray-900">
+              Thầy Nguyễn Đông Kỳ
+            </div>
+            <svg
+              width={3}
+              height={3}
+              viewBox="0 0 2 2"
+              aria-hidden="true"
+              className="fill-gray-900"
+            >
+              <circle r={1} cx={1} cy={1} />
+            </svg>
+            <div className="text-gray-600">Giảng viên hướng dẫn</div>
+          </div>
+        </figcaption>
         <figure className="mt-10">
           <blockquote
             className={`text-center text-xl/8 font-semibold text-gray-900 sm:text-2xl/9 transition-transform duration-1000 ease-in-out transform ${
@@ -35,36 +65,6 @@ export default function IntroduceSection() {
               still succeed and be happy…”
             </p>
           </blockquote>
-          <figcaption
-            className={`mt-10 transition-transform duration-1000 ease-in-out transform ${
-              isVisible
-                ? "opacity-100 translate-x-0"
-                : "opacity-0 translate-x-20"
-            }`}
-          >
-            <img
-              alt="Thien An"
-              src="https://hopamchuan.com/node/get_artist_image/thien_an"
-              className={`mx-auto size-10 rounded-full transition-all duration-1000 ease-in-out transform delay-500 ${
-                isVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-10"
-              }`}
-            />
-            <div className="mt-4 flex items-center justify-center space-x-3 text-base">
-              <div className="font-semibold text-gray-900">Thien An</div>
-              <svg
-                width={3}
-                height={3}
-                viewBox="0 0 2 2"
-                aria-hidden="true"
-                className="fill-gray-900"
-              >
-                <circle r={1} cx={1} cy={1} />
-              </svg>
-              <div className="text-gray-600">CEO of Workcation</div>
-            </div>
-          </figcaption>
         </figure>
       </div>
     </section>
