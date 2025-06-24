@@ -12,3 +12,7 @@ body {
 .text-accent {
   color: #eaa257;
 }
+
+.GradientText {
+  @apply bg-gradient-to-r from-slate-700 to-amber-500 bg-clip-text text-transparent;
+}

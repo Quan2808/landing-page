@@ -1,5 +1,5 @@
 import TechnicalSlider from "./TechnicalSlider";
-import useIntersectionObserver from "@hooks/useIntersectionObserver.js";
+import useIntersectionObserver from "../../../hooks/useIntersectionObserver.js";
 import { CubeIcon, SparklesIcon, FilmIcon } from "@heroicons/react/24/outline";
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
 
@@ -40,7 +40,7 @@ const renderDescriptionWithGradient = (description) => {
     const regex = new RegExp(`\\b${term}\\b`, "g");
     formattedDescription = formattedDescription.replace(
       regex,
-      `<span class="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">${term}</span>`
+      `<span class="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent font-bold">${term}</span>`
     );
   });
 

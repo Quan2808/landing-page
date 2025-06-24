@@ -1,4 +1,5 @@
 import useIntersectionObserver from "@hooks/useIntersectionObserver.js";
+import logo from "@/assets/images/logo.png";
 
 export default function IntroduceSection() {
   const [sectionRef, isVisible] = useIntersectionObserver(0.6);
@@ -11,7 +12,7 @@ export default function IntroduceSection() {
       <div className="mx-auto max-w-2xl lg:max-w-4xl">
         <img
           alt="FPT Polytechnic Logo"
-          src="./src/assets/images/logo.png"
+          src={logo}
           className={`mx-auto h-12 transition-all duration-1000 ease-in-out transform ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}

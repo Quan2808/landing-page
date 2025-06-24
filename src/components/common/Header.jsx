@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import logo from "@/assets/images/logo.png";
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -38,16 +39,13 @@ const Header = () => {
             {/* Logo bên trái */}
             <div className="flex items-center">
               <div className="flex-shrink-0 flex items-center">
-                <img
-                  src="./src/assets/images/logo.png"
-                  alt="Logo"
-                  className="h-10 mr-3"
-                />
+                <img src={logo} alt="Logo" className="h-10 mr-3" />
                 <div>
                   <h1 className="text-2xl font-bold text-[#425261] tracking-tight">
-                    DREAM DRAFT
+                    <span>DREAM </span>
+                    <span className="text-[#f6a248]">DRAFT</span>
                   </h1>
-                  <p className="text-xs text-[#f6a248] mt-[2px]">
+                  <p className="text-xs bg-gradient-to-r GradientText mt-[2px]">
                     Màu Của Hòa Bình
                   </p>
                 </div>
