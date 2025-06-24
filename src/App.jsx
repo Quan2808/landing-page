@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "./components/Header";
-import HeroSection from "./components/HeroSection";
-import TeamsSection from "./components/TeamsSection";
-import IntroduceSection from "./components/IntroduceSection";
+import Header from "./components/common/Header";
+import HeroSection from "./components/sections/Hero/HeroSection";
+import TeamsSection from "./components/sections/Teams/TeamsSection";
+import IntroduceSection from "./components/sections/Introduce/IntroduceSection";
 import useSectionNavigation from "./hooks/useSectionNavigation";
-import TechnicalSection from "./components/TechnicalSection";
+import TechnicalSection from "./components/sections/Technical/TechnicalSection";
 
 function App() {
   const { NavigationButtons } = useSectionNavigation([

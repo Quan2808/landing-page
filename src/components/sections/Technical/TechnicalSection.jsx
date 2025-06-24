@@ -1,5 +1,5 @@
 import TechnicalSlider from "./TechnicalSlider";
-import useIntersectionObserver from "../hooks/useIntersectionObserver.js";
+import useIntersectionObserver from "../../../hooks/useIntersectionObserver.js";
 import { CubeIcon, SparklesIcon, FilmIcon } from "@heroicons/react/24/outline";
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
 
