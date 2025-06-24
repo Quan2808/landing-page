@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import useIntersectionObserver from "../../../hooks/useIntersectionObserver.js";
+import useIntersectionObserver from "@hooks/useIntersectionObserver.js";
 
 export default function TeamsSection() {
   const [sectionRef, isVisible] = useIntersectionObserver(0.6);

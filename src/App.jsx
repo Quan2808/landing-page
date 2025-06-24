@@ -5,12 +5,15 @@ import {
   TeamsSection,
   IntroduceSection,
   TechnicalSection,
+  CharacterIntroduceSection,
+  ExampleSections,
 } from "@components/sections";
 
 function App() {
   const { NavigationButtons } = SectionNavigation([
     "hero",
     "introduce",
+    "characterIntroduce",
     "teams",
     "Technical",
   ]);
@@ -25,8 +28,11 @@ function App() {
       </div>
 
       <div id="introduce" className="min-h-screen">
-        {/* <TechnicalSection></TechnicalSection> */}
         <IntroduceSection />
+      </div>
+
+      <div id="characterIntroduce" className="min-h-screen">
+        <CharacterIntroduceSection />
       </div>
 
       <div id="teams" className="min-h-screen">

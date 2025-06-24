@@ -1,5 +1,5 @@
 import TechnicalSlider from "./TechnicalSlider";
-import useIntersectionObserver from "../../../hooks/useIntersectionObserver.js";
+import useIntersectionObserver from "@hooks/useIntersectionObserver.js";
 import { CubeIcon, SparklesIcon, FilmIcon } from "@heroicons/react/24/outline";
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
 
@@ -60,7 +60,7 @@ export default function TechnicalSection() {
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-center">
           <div className="lg:pt-4 lg:pr-8">
             <div className="lg:max-w-lg">
-              {/* Badge
+              {/* Badge*/}
               <div
                 className={`inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 border border-indigo-200 rounded-full text-sm font-semibold text-indigo-700 mb-6 transition-all duration-1000 ease-out transform ${
                   isVisible
@@ -70,7 +70,7 @@ export default function TechnicalSection() {
               >
                 <SparklesIcon className="w-4 h-4" />
                 Streamlined Production
-              </div> */}
+              </div>
 
               {/* Main heading */}
               <h2
@@ -81,7 +81,7 @@ export default function TechnicalSection() {
                 }`}
                 style={{ transitionDelay: "100ms" }}
               >
-                Advanced{" "}
+                Advanced <br />
                 <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
                   3D Workflow
                 </span>
