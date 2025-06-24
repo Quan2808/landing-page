@@ -24,6 +24,29 @@ const features = [
   },
 ];
 
+const renderDescriptionWithGradient = (description) => {
+  const termsToStyle = [
+    "Maya 3D",
+    "Cinema 4D",
+    "Character Creator 4",
+    "Arnold",
+    "iClone 8",
+    "After Effects",
+    "Premiere Pro",
+  ];
+  let formattedDescription = description;
+
+  termsToStyle.forEach((term) => {
+    const regex = new RegExp(`\\b${term}\\b`, "g");
+    formattedDescription = formattedDescription.replace(
+      regex,
+      `<span class="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">${term}</span>`
+    );
+  });
+
+  return <span dangerouslySetInnerHTML={{ __html: formattedDescription }} />;
+};
+
 export default function TechnicalSection() {
   const [sectionRef, isVisible] = useIntersectionObserver(0.3);
 
@@ -108,7 +131,7 @@ export default function TechnicalSection() {
                         {feature.name}
                       </h3>
                       <p className="text-gray-600 text-sm leading-relaxed">
-                        {feature.description}
+                        {renderDescriptionWithGradient(feature.description)}
                       </p>
                     </div>
 
