@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, SectionNavigation } from "@components/common";
+import { Header, Footer, SectionNavigation } from "@components/common";
 import {
   HeroSection,
   TeamsSection,
@@ -44,6 +44,8 @@ function App() {
 
       {/* Navigation buttons */}
       <NavigationButtons />
+
+      <Footer></Footer>
     </div>
   );
 }

@@ -53,7 +53,7 @@ const Header = () => {
             </div>
 
             {/* Music toggle bên phải */}
-            <div className="flex items-center">
+            {/* <div className="flex items-center">
               <button
                 onClick={toggleMusic}
                 className={`flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300 ${
@@ -87,7 +87,7 @@ const Header = () => {
                   {isMusicOn ? "ON" : "OFF"}
                 </span>
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
