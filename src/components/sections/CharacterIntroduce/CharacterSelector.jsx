@@ -163,24 +163,6 @@ const CharacterSelector = ({
           }
         }
       `}</style>
-
-      {/* <div className="flex justify-center space-x-2 mt-6">
-        {characters.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToCharacter(index)}
-            disabled={isTransitioning}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              index === currentCharacterIndex
-                ? `${characters[currentCharacterIndex].textColor.replace(
-                    "text-",
-                    "bg-"
-                  )} scale-125`
-                : "bg-gray-300 hover:bg-gray-400"
-            } disabled:opacity-50`}
-          />
-        ))}
-      </div> */}
     </div>
   );
 };

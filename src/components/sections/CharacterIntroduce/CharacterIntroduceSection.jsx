@@ -279,6 +279,9 @@ function CharacterCarousel() {
   const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
   const [isTransitioning, setIsTransitioning] = React.useState(false);
 
+  // Create ref for CharacterContent section
+  const characterContentRef = React.useRef(null);
+
   const currentCharacter = characters[currentCharacterIndex];
 
   // Auto slide functionality for images
@@ -297,6 +300,17 @@ function CharacterCarousel() {
     setCurrentImageIndex(0);
   }, [currentCharacterIndex]);
 
+  // Smooth scroll to CharacterContent
+  const scrollToCharacterContent = () => {
+    if (characterContentRef.current) {
+      characterContentRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "nearest",
+      });
+    }
+  };
+
   const nextCharacter = () => {
     if (isTransitioning) return;
     setIsTransitioning(true);
@@ -305,6 +319,8 @@ function CharacterCarousel() {
         prev === characters.length - 1 ? 0 : prev + 1
       );
       setIsTransitioning(false);
+      // Scroll to content after transition
+      setTimeout(() => scrollToCharacterContent(), 100);
     }, 300);
   };
 
@@ -316,6 +332,8 @@ function CharacterCarousel() {
         prev === 0 ? characters.length - 1 : prev - 1
       );
       setIsTransitioning(false);
+      // Scroll to content after transition
+      setTimeout(() => scrollToCharacterContent(), 100);
     }, 300);
   };
 
@@ -325,6 +343,8 @@ function CharacterCarousel() {
     setTimeout(() => {
       setCurrentCharacterIndex(index);
       setIsTransitioning(false);
+      // Scroll to content after transition
+      setTimeout(() => scrollToCharacterContent(), 100);
     }, 300);
   };
 
@@ -367,7 +387,9 @@ function CharacterCarousel() {
         />
       </div>
 
+      {/* Pass ref to CharacterContent */}
       <CharacterContent
+        ref={characterContentRef}
         sectionRef={sectionRef}
         isVisible={isVisible}
         isTransitioning={isTransitioning}
