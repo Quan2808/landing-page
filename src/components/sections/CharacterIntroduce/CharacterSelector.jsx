@@ -88,7 +88,7 @@ const CharacterSelector = ({
                 <button
                   onClick={() => goToCharacter(actualIndex)}
                   disabled={isTransitioning}
-                  className={`group relative w-full transition-all duration-500 ease-out transform hover:-translate-y-2 disabled:opacity-50 ${
+                  className={`group relative w-full x-out transform hover:-translate-y-2 disabled:opacity-50 ${
                     isActive ? "z-10" : "hover:z-10"
                   } ${isTransitioning ? "pointer-events-none" : ""}`}
                 >
@@ -164,7 +164,7 @@ const CharacterSelector = ({
         }
       `}</style>
 
-      <div className="flex justify-center space-x-2 mt-6">
+      {/* <div className="flex justify-center space-x-2 mt-6">
         {characters.map((_, index) => (
           <button
             key={index}
@@ -180,7 +180,7 @@ const CharacterSelector = ({
             } disabled:opacity-50`}
           />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
