@@ -1,9 +1,10 @@
 import React from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 import { Heart, Star } from "lucide-react";
-import useIntersectionObserver from "@hooks/useIntersectionObserver.js";
 import CharacterSelector from "./CharacterSelector";
 import CharacterContent from "./CharacterContent";
+import useCharacterCarousel from "@hooks/useCharacterCarousel.js";
+import useIntersectionObserver from "@hooks/useIntersectionObserver.js";
 
 // Mock intersection observer hook
 // const useIntersectionObserver = (threshold) => {
@@ -275,97 +276,22 @@ const characters = [
 
 function CharacterCarousel() {
   const [sectionRef, isVisible] = useIntersectionObserver(0.3);
-  const [currentCharacterIndex, setCurrentCharacterIndex] = React.useState(0);
-  const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
-  const [isTransitioning, setIsTransitioning] = React.useState(false);
-
-  // Create ref for CharacterContent section
-  const characterContentRef = React.useRef(null);
-
-  const currentCharacter = characters[currentCharacterIndex];
-
-  // Auto slide functionality for images
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prev) =>
-        prev === currentCharacter.images.length - 1 ? 0 : prev + 1
-      );
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, [currentCharacter.images.length]);
-
-  // Reset image index when character changes
-  React.useEffect(() => {
-    setCurrentImageIndex(0);
-  }, [currentCharacterIndex]);
-
-  // Smooth scroll to CharacterContent
-  const scrollToCharacterContent = () => {
-    if (characterContentRef.current) {
-      characterContentRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-        inline: "nearest",
-      });
-    }
-  };
-
-  const nextCharacter = () => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setCurrentCharacterIndex((prev) =>
-        prev === characters.length - 1 ? 0 : prev + 1
-      );
-      setIsTransitioning(false);
-      // Scroll to content after transition
-      setTimeout(() => scrollToCharacterContent(), 100);
-    }, 300);
-  };
-
-  const prevCharacter = () => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setCurrentCharacterIndex((prev) =>
-        prev === 0 ? characters.length - 1 : prev - 1
-      );
-      setIsTransitioning(false);
-      // Scroll to content after transition
-      setTimeout(() => scrollToCharacterContent(), 100);
-    }, 300);
-  };
-
-  const goToCharacter = (index) => {
-    if (isTransitioning || index === currentCharacterIndex) return;
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setCurrentCharacterIndex(index);
-      setIsTransitioning(false);
-      // Scroll to content after transition
-      setTimeout(() => scrollToCharacterContent(), 100);
-    }, 300);
-  };
-
-  const nextImage = () => {
-    setCurrentImageIndex((prev) =>
-      prev === currentCharacter.images.length - 1 ? 0 : prev + 1
-    );
-  };
-
-  const prevImage = () => {
-    setCurrentImageIndex((prev) =>
-      prev === 0 ? currentCharacter.images.length - 1 : prev - 1
-    );
-  };
-
-  const goToImage = (index) => {
-    setCurrentImageIndex(index);
-  };
+  const {
+    currentCharacter,
+    currentCharacterIndex,
+    currentImageIndex,
+    isTransitioning,
+    characterContentRef,
+    nextCharacter,
+    prevCharacter,
+    goToCharacter,
+    nextImage,
+    prevImage,
+    goToImage,
+  } = useCharacterCarousel(characters);
 
   return (
-    <section className="relative py-20 " id="characters" ref={sectionRef}>
+    <section className="relative py-20" id="characters" ref={sectionRef}>
       {/* Character Navigation */}
       <div className="container mx-auto px-4 max-w-7xl mb-12">
         <div className="text-center mb-8">
@@ -387,7 +313,7 @@ function CharacterCarousel() {
         />
       </div>
 
-      {/* Pass ref to CharacterContent */}
+      {/* Character Content */}
       <CharacterContent
         ref={characterContentRef}
         sectionRef={sectionRef}

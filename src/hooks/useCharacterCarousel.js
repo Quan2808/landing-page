@@ -1,21 +1,15 @@
-import React from "react";
-import useIntersectionObserver from "@hooks/useIntersectionObserver.js";
+import { useState, useEffect, useRef } from "react";
 
 const useCharacterCarousel = (characters) => {
-  // State management
-  const [sectionRef, isVisible] = useIntersectionObserver(0.3);
-  const [currentCharacterIndex, setCurrentCharacterIndex] = React.useState(0);
-  const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
-  const [isTransitioning, setIsTransitioning] = React.useState(false);
+  const [currentCharacterIndex, setCurrentCharacterIndex] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const characterContentRef = useRef(null);
 
-  // Ref for scrolling to character content
-  const characterContentRef = React.useRef(null);
-
-  // Current character based on index
   const currentCharacter = characters[currentCharacterIndex];
 
   // Auto slide functionality for images
-  React.useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) =>
         prev === currentCharacter.images.length - 1 ? 0 : prev + 1
@@ -26,7 +20,7 @@ const useCharacterCarousel = (characters) => {
   }, [currentCharacter.images.length]);
 
   // Reset image index when character changes
-  React.useEffect(() => {
+  useEffect(() => {
     setCurrentImageIndex(0);
   }, [currentCharacterIndex]);
 
@@ -35,13 +29,12 @@ const useCharacterCarousel = (characters) => {
     if (characterContentRef.current) {
       characterContentRef.current.scrollIntoView({
         behavior: "smooth",
-        block: "start",
+        block: "center",
         inline: "nearest",
       });
     }
   };
 
-  // Navigation functions for characters
   const nextCharacter = () => {
     if (isTransitioning) return;
     setIsTransitioning(true);
@@ -76,7 +69,6 @@ const useCharacterCarousel = (characters) => {
     }, 300);
   };
 
-  // Navigation functions for images
   const nextImage = () => {
     setCurrentImageIndex((prev) =>
       prev === currentCharacter.images.length - 1 ? 0 : prev + 1
@@ -94,13 +86,11 @@ const useCharacterCarousel = (characters) => {
   };
 
   return {
-    sectionRef,
-    isVisible,
-    characterContentRef,
     currentCharacter,
     currentCharacterIndex,
     currentImageIndex,
     isTransitioning,
+    characterContentRef,
     nextCharacter,
     prevCharacter,
     goToCharacter,
@@ -109,3 +99,5 @@ const useCharacterCarousel = (characters) => {
     goToImage,
   };
 };
+
+export default useCharacterCarousel;
