@@ -5,7 +5,6 @@ const useCharacterCarousel = (characters) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const characterContentRef = useRef(null);
-
   const currentCharacter = characters[currentCharacterIndex];
 
   // Auto slide functionality for images

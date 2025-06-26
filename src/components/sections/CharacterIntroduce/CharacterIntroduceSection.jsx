@@ -291,7 +291,11 @@ function CharacterCarousel() {
   } = useCharacterCarousel(characters);
 
   return (
-    <section className="relative py-20" id="characters" ref={sectionRef}>
+    <section
+      className="relative isolate overflow-hidden px-6 py-20"
+      id="characters"
+      ref={sectionRef}
+    >
       {/* Character Navigation */}
       <div className="container mx-auto px-4 max-w-7xl mb-12">
         <div className="text-center mb-8">
@@ -304,6 +308,7 @@ function CharacterCarousel() {
         </div>
         {/* Character Selector */}
         <CharacterSelector
+          isVisible={isVisible}
           characters={characters}
           currentCharacterIndex={currentCharacterIndex}
           isTransitioning={isTransitioning}

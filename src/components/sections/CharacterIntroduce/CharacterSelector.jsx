@@ -2,6 +2,7 @@ import React from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 
 const CharacterSelector = ({
+  isVisible,
   characters,
   currentCharacterIndex,
   isTransitioning,
@@ -10,7 +11,11 @@ const CharacterSelector = ({
   goToCharacter,
 }) => {
   return (
-    <div className="relative w-full max-w-4xl mx-auto mb-8">
+    <div
+      className={`relative w-full max-w-4xl mx-auto mb-8 text-center transition-all duration-1000 ease-out transform ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
+      }`}
+    >
       {/* Navigation arrows */}
       <button
         onClick={prevCharacter}
@@ -152,17 +157,6 @@ const CharacterSelector = ({
           })}
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes shimmer {
-          0% {
-            transform: translateX(-100%);
-          }
-          100% {
-            transform: translateX(100%);
-          }
-        }
-      `}</style>
     </div>
   );
 };
