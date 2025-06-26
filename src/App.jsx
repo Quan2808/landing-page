@@ -6,7 +6,6 @@ import {
   IntroduceSection,
   TechnicalSection,
   CharacterIntroduceSection,
-  ExampleSections,
 } from "@components/sections";
 
 function App() {
