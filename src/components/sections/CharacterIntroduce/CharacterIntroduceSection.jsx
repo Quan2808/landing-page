@@ -42,27 +42,14 @@ import linhNguy2 from "@images/characters/Linh-Nguy/linh-nguy-2.webp";
 import linhNguy3 from "@images/characters/Linh-Nguy/linh-nguy-3.webp";
 import linhNguy4 from "@images/characters/Linh-Nguy/linh-nguy-4.webp";
 
-// Mock intersection observer hook
-// const useIntersectionObserver = (threshold) => {
-//   const [isVisible, setIsVisible] = React.useState(false);
-//   const ref = React.useRef(null);
-
-//   React.useEffect(() => {
-//     const timer = setTimeout(() => setIsVisible(true), 100);
-//     return () => clearTimeout(timer);
-//   }, []);
-
-//   return [ref, isVisible];
-// };
-
 const characters = [
   {
     id: 1,
     images: [
-      { src: cuTuan1, alt: "Cu Tứn - Portrait 1" },
-      { src: cuTuan2, alt: "Cu Tứn - Portrait 2" },
+      { src: cuTuan4, alt: "Cu Tứn - Portrait 1" },
+      { src: cuTuan1, alt: "Cu Tứn - Portrait 4" },
       { src: cuTuan3, alt: "Cu Tứn - Portrait 3" },
-      { src: cuTuan4, alt: "Cu Tứn - Portrait 4" },
+      { src: cuTuan2, alt: "Cu Tứn - Portrait 2" },
     ],
     name: "Cu Tứn",
     stageName: "Grandson of a Veteran",
@@ -89,10 +76,10 @@ const characters = [
   {
     id: 2,
     images: [
-      { src: haiLiem1, alt: "Hai Liêm - Portrait 1" },
-      { src: haiLiem2, alt: "Hai Liêm - Portrait 2" },
-      { src: haiLiem3, alt: "Hai Liêm - Portrait 3" },
+      { src: haiLiem3, alt: "Hai Liêm - Portrait 1" },
       { src: haiLiem4, alt: "Hai Liêm - Portrait 4" },
+      { src: haiLiem1, alt: "Hai Liêm - Portrait 3" },
+      { src: haiLiem2, alt: "Hai Liêm - Portrait 2" },
     ],
     name: "Hai Liêm",
     stageName: "Platoon Leader",
@@ -117,10 +104,10 @@ const characters = [
   {
     id: 3,
     images: [
-      { src: anhTu1, alt: "Anh Tư - Portrait 1" },
+      { src: anhTu4, alt: "Anh Tư - Portrait 1" },
+      { src: anhTu1, alt: "Anh Tư - Portrait 4" },
       { src: anhTu2, alt: "Anh Tư - Portrait 2" },
       { src: anhTu3, alt: "Anh Tư - Portrait 3" },
-      { src: anhTu4, alt: "Anh Tư - Portrait 4" },
     ],
     name: "Anh Tư",
     stageName: "Platoon Leader II",
@@ -173,10 +160,10 @@ const characters = [
   {
     id: 5,
     images: [
-      { src: anhLan1, alt: "Anh Luân - Portrait 1" },
+      { src: anhLan4, alt: "Anh Luân - Portrait 4" },
       { src: anhLan2, alt: "Anh Luân - Portrait 2" },
       { src: anhLan3, alt: "Anh Luân - Portrait 3" },
-      { src: anhLan4, alt: "Anh Luân - Portrait 4" },
+      { src: anhLan1, alt: "Anh Luân - Portrait 1" },
     ],
     name: "Anh Luân",
     stageName: "Platoon Soldier",
@@ -201,10 +188,10 @@ const characters = [
   {
     id: 6,
     images: [
+      { src: linhNguy4, alt: "Anh Hoang - Portrait 4" },
       { src: linhNguy1, alt: "Anh Hoang - Portrait 1" },
       { src: linhNguy2, alt: "Anh Hoang - Portrait 2" },
       { src: linhNguy3, alt: "Anh Hoang - Portrait 3" },
-      { src: linhNguy4, alt: "Anh Hoang - Portrait 4" },
     ],
     name: "Anh Hoang",
     stageName: "Enemy Commander",
