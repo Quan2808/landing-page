@@ -5,21 +5,21 @@ import { ArrowRightIcon } from "@heroicons/react/20/solid";
 
 const features = [
   {
-    name: "Modeling and Texturing",
+    name: "Mô hình hóa và Kết cấu",
     description:
-      "Create detailed and realistic 3D models and textures using Character Creator 4, Maya 3D, and Cinema 4D for high-quality visual assets.",
+      "Tạo ra các mô hình 3D và kết cấu chi tiết, chân thực bằng Character Creator 4, Maya 3D và Cinema 4D.",
     icon: CubeIcon,
   },
   {
-    name: "Rendering",
+    name: "Kết xuất",
     description:
-      "Achieve stunning visual outputs with Arnold, delivering photorealistic renders for professional-grade projects.",
+      "Đạt được đầu ra hình ảnh tuyệt đẹp với Arnold, mang lại khả năng kết xuất siêu thực cho dự án.",
     icon: SparklesIcon,
   },
   {
-    name: "Animation and Post-Production",
+    name: "Hoạt hình và Hậu kỳ",
     description:
-      "Craft dynamic animations with iClone 8 and After Effects, and finalize projects with seamless editing in Premiere Pro.",
+      "Tạo ra các hoạt hình sinh động với iClone 8 và After Effects, và hoàn thiện dự án với khả năng chỉnh sửa liền mạch trong Premiere Pro.",
     icon: FilmIcon,
   },
 ];
@@ -69,7 +69,7 @@ export default function TechnicalSection() {
                 }`}
               >
                 <SparklesIcon className="w-4 h-4" />
-                Streamlined Production
+                Quy trình Sản xuất Dự án
               </div>
 
               {/* Main heading */}
@@ -81,9 +81,9 @@ export default function TechnicalSection() {
                 }`}
                 style={{ transitionDelay: "100ms" }}
               >
-                Advanced <br />
+                Quy trình <br />
                 <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
-                  3D Workflow
+                  3D Tiên tiến
                 </span>
               </h2>
 
@@ -96,9 +96,9 @@ export default function TechnicalSection() {
                 }`}
                 style={{ transitionDelay: "200ms" }}
               >
-                Leverage industry-leading tools for modeling, rendering,
-                animation, and post-production to create high-quality 3D content
-                efficiently.
+                Tận dụng các công cụ hàng đầu trong ngành để mô hình hóa, kết
+                xuất, hoạt hình và hậu kỳ nhằm tạo ra nội dung 3D chất lượng cao
+                một cách hiệu quả.
               </p>
 
               {/* Features list */}

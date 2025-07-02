@@ -107,10 +107,11 @@ export default function TechnicalSlider() {
           }`}
         >
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Technical Expertise
+            Kỹ thuật sử dụng
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Professional tools and software powering creative workflows
+            Các công cụ và phần mềm chuyên nghiệp hỗ trợ quy trình làm việc cho
+            dự án
           </p>
         </div>
 
@@ -176,7 +177,7 @@ export default function TechnicalSlider() {
                     className={`group relative bg-gradient-to-br ${
                       categoryColors[logo.category] ||
                       "from-gray-100/80 to-white/80 border-gray-200/50"
-                    } backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 border hover:border-opacity-60 hover:-translate-y-2 hover:rotate-1 transform-gpu transition-all duration-1000 ease-out`}
+                    } backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl border hover:border-opacity-60 hover:-translate-y-2 hover:rotate-1 transform-gpu transition-all duration-1000 ease-out`}
                     style={{
                       transitionDelay: isVisible
                         ? `${getStaggerDelay(index)}ms`

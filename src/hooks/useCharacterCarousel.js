@@ -42,7 +42,7 @@ const useCharacterCarousel = (characters) => {
         prev === characters.length - 1 ? 0 : prev + 1
       );
       setIsTransitioning(false);
-      setTimeout(() => scrollToCharacterContent(), 100);
+      setTimeout(() => scrollToCharacterContent(), 120);
     }, 300);
   };
 
@@ -54,7 +54,7 @@ const useCharacterCarousel = (characters) => {
         prev === 0 ? characters.length - 1 : prev - 1
       );
       setIsTransitioning(false);
-      setTimeout(() => scrollToCharacterContent(), 100);
+      setTimeout(() => scrollToCharacterContent(), 120);
     }, 300);
   };
 
@@ -64,7 +64,7 @@ const useCharacterCarousel = (characters) => {
     setTimeout(() => {
       setCurrentCharacterIndex(index);
       setIsTransitioning(false);
-      setTimeout(() => scrollToCharacterContent(), 100);
+      setTimeout(() => scrollToCharacterContent(), 120);
     }, 300);
   };
 

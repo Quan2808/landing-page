@@ -103,15 +103,17 @@ export default function TeamsSection() {
                     : "opacity-0 translate-x-20"
                 }`}
               >
-                Our{" "}
+                Đội ngũ{" "}
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  Leading
+                  Dẫn đầu
                 </span>
-                , Strong &{" "}
                 <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  Creative
+                  , Mạnh mẽ
                 </span>{" "}
-                Team
+                &{" "}
+                <span className="bg-gradient-to-r from-pink-600 to-blue-600 bg-clip-text text-transparent">
+                  Sáng tạo
+                </span>
               </h2>
             </div>
 
@@ -127,11 +129,11 @@ export default function TeamsSection() {
                 <div className="text-3xl font-bold text-blue-600">
                   {teamMembers.length}+
                 </div>
-                <div className="text-sm text-slate-500">Team Members</div>
+                <div className="text-sm text-slate-500">Thành viên</div>
               </div>
               <p className="text-lg md:text-xl text-slate-600 text-center sm:text-right max-w-xs sm:max-w-sm">
-                Meet the passionate professionals who work tirelessly to make
-                our product the best it can be.
+                Gặp gỡ các thành viên đầy nhiệt huyết làm việc không mệt mỏi để
+                tạo ra sản phẩm tốt nhất có thể.
               </p>
             </div>
 
