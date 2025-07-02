@@ -130,7 +130,7 @@ const CharacterContent = React.forwardRef(
 
                 <div className="space-y-6 mt-10">
                   <h3 className="text-xl font-bold text-gray-900 mb-6">
-                    Key Achievements
+                    Thông tin nhân vật
                   </h3>
                   <div
                     className={`space-y-8 transition-all duration-1000 ease-out transform ${

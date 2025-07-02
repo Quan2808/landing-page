@@ -51,22 +51,22 @@ const characters = [
       { src: cuTuan3, alt: "Cu Tứn - Portrait 3" },
       { src: cuTuan2, alt: "Cu Tứn - Portrait 2" },
     ],
-    name: "Cu Tứn",
-    stageName: "Grandson of a Veteran",
+    name: "Cu Tuấn",
+    stageName: "Cháu nội của một cựu chiến binh",
     description:
-      "Spirited 12-year-old in the supply team, delivering ammunition with courage and patriotism, honoring his veteran grandfather.",
+      "Một cậu bé 12 tuổi thuộc đội tiếp tế, là cháu nội của cựu chiến binh. Dù nhỏ tuổi, cậu gan dạ, nhanh nhẹn, thường băng qua khói lửa tiếp đạn cho chiến sĩ. Cậu là biểu tượng của niềm tin, lòng dũng cảm và sự biết ơn thế hệ cha ông.",
     achievements: [
       {
         icon: Star,
-        title: "Heroic Service",
+        title: "Nhiệm vụ",
         description:
-          "Delivered critical ammunition under intense battlefield conditions.",
+          "Làm nhiệm vụ tiếp tế đạn dược cho các chiến sĩ giữa chiến trường khốc liệt.",
       },
       {
         icon: Heart,
-        title: "National Inspiration",
+        title: "Tính cách",
         description:
-          "Blends youthful innocence with patriotism, earning admiration.",
+          "Can đảm, lanh lợi, yêu nước nồng nàn, giàu tinh thần trách nhiệm. rất tôn trọng và ngưỡng mộ các chiến sĩ. Có sự pha trộn giữa sự ngây thơ trẻ con và lòng yêu nước mạnh mẽ.",
       },
     ],
     bgColor: "from-blue-500 to-purple-600",
@@ -82,19 +82,21 @@ const characters = [
       { src: haiLiem2, alt: "Hai Liêm - Portrait 2" },
     ],
     name: "Hai Liêm",
-    stageName: "Platoon Leader",
+    stageName: "Trung đội trưởng",
     description:
-      "Composed leader mentoring Cù Tứn, balancing discipline with care on the battlefield.",
+      "Hai Liêm, trung đội trưởng điềm đạm và dày dạn kinh nghiệm, luôn giữ vững tinh thần đơn vị. Sau vẻ nghiêm nghị là sự quan tâm sâu sắc, đặc biệt dành cho Cu Tuấn – mầm xanh ông âm thầm đặt nhiều kỳ vọng giữa chiến trường khốc liệt.",
     achievements: [
       {
         icon: Star,
-        title: "Strategic Command",
-        description: "Orchestrates platoon operations and sustains morale.",
+        title: "Nhiệm vụ",
+        description:
+          "Chỉ huy trung đội, điều phối lực lượng, đưa ra chiến lược phòng thủ và giữ vững tinh thần chiến đấu.",
       },
       {
         icon: Heart,
-        title: "Compassionate Leadership",
-        description: "Fosters loyalty and hope, guiding Cù Tứn.",
+        title: "Tính cách",
+        description:
+          "Trách nhiệm cao, đôi lúc nghiêm nghị nhưng rất bao dung và quan tâm đến chiến sĩ dưới quyền, đặc biệt là Cu Tuấn.",
       },
     ],
     bgColor: "from-green-500 to-teal-600",
@@ -110,19 +112,21 @@ const characters = [
       { src: anhTu3, alt: "Anh Tư - Portrait 3" },
     ],
     name: "Anh Tư",
-    stageName: "Platoon Leader II",
+    stageName: "Trung đội trưởng đội 2",
     description:
-      "Charismatic leader of Platoon II, using humor and resolve to command effectively.",
+      "Trung đội trưởng đơn vị 2, anh Tư thân thiện, hài hước, mang lại tiếng cười giữa chiến trường. Khi vào trận, anh trở nên nghiêm túc, quyết đoán và luôn sát cánh cùng đồng đội, đặt nhiệm vụ lên hàng đầu.",
     achievements: [
       {
         icon: Star,
-        title: "Tactical Coordination",
-        description: "Leads Platoon II in seamless combat support.",
+        title: "Nhiệm vụ",
+        description:
+          "Chỉ huy đơn vị phối hợp hỗ trợ chiến đấu; kết nối và phối hợp với trung đội của Hai Liêm.",
       },
       {
         icon: Heart,
-        title: "Inspirational Presence",
-        description: "Infuses warmth yet commands with focus.",
+        title: "Tính cách",
+        description:
+          "Hài hước, thân thiện, hay trêu đùa tạo không khí vui vẻ giữa chiến trường, nhưng nghiêm túc khi chiến đấu.",
       },
     ],
     bgColor: "from-orange-500 to-red-600",
@@ -138,19 +142,21 @@ const characters = [
       { src: anhSang4, alt: "Anh Sang - Portrait 4" },
     ],
     name: "Anh Sang",
-    stageName: "Messenger",
+    stageName: "Chiến sĩ đưa tin",
     description:
-      "Swift messenger relaying critical information with agility and composure.",
+      "Là chiến sĩ đưa tin có nhiệm vụ kết nối thông tin giữa tiền tuyến và chỉ huy. Với sự nhanh nhạy, tỉnh táo và bản lĩnh, anh là mắt xích quan trọng giúp duy trì sự liên lạc và phối hợp tác chiến hiệu quả. Sự xuất hiện của anh luôn gắn liền với tốc độ, chính xác và tinh thần cảnh giác cao độ.",
     achievements: [
       {
         icon: Star,
-        title: "Critical Communication",
-        description: "Delivers timely intelligence for strategic decisions.",
+        title: "Nhiệm vụ",
+        description:
+          "Truyền đạt tin tức từ tiền tuyến, cung cấp thông tin về kế hoạch tấn công của địch cho chỉ huy.",
       },
       {
         icon: Heart,
-        title: "Steadfast Resolve",
-        description: "Maintains calm in harrowing situations.",
+        title: "Tính cách",
+        description:
+          "Nhanh trí, dũng cảm, điềm tĩnh, luôn bình tĩnh trước những tình huống căng thẳng.",
       },
     ],
     bgColor: "from-yellow-500 to-orange-600",
@@ -166,19 +172,21 @@ const characters = [
       { src: anhLan1, alt: "Anh Luân - Portrait 1" },
     ],
     name: "Anh Luân",
-    stageName: "Platoon Soldier",
+    stageName: "Chiến sĩ thuộc trung đội của Hai Liêm",
     description:
-      "Valiant soldier in Hai Liêm’s platoon, loyal and bonded with Cù Tứn.",
+      "là một chiến sĩ trẻ của trung đội, gan dạ và giàu tình cảm, trực tiếp tham gia chiến đấu nơi tiền tuyến, có tinh thần đồng đội sâu sắc và từng được cu Tuấn kịp thời tiếp đạn trong lúc nguy cấp, từ đó hình thành mối gắn bó đặc biệt giữa hai người",
     achievements: [
       {
         icon: Star,
-        title: "Frontline Valor",
-        description: "Engages in combat, holding the line.",
+        title: "Nhiệm vụ",
+        description:
+          "Tham gia trực tiếp chiến đấu, phối hợp tác chiến cùng các chiến sĩ khác.",
       },
       {
         icon: Heart,
-        title: "Loyal Comrade",
-        description: "Protects teammates with bravery and compassion.",
+        title: "Tính cách",
+        description:
+          "Quả cảm, sống tình nghĩa, giàu lòng nhân ái, sẵn sàng bảo vệ đồng đội trong mọi hoàn cảnh.",
       },
     ],
     bgColor: "from-teal-500 to-cyan-600",
@@ -194,19 +202,21 @@ const characters = [
       { src: linhNguy3, alt: "Anh Hoang - Portrait 3" },
     ],
     name: "Anh Hoang",
-    stageName: "Enemy Commander",
+    stageName: "Quân địch",
     description:
-      "Cold, calculating enemy commander at Quang Tri Citadel, embodying war’s brutality.",
+      "Là đại diện cho lực lượng đối lập trong cuộc chiến tại thành cổ Quảng Trị. Nhân vật này mang hình ảnh nguy hiểm, lạnh lùng và khó lường, xuất hiện trong những tình huống căng thẳng, góp phần đẩy cao xung đột và thể hiện rõ sự tàn khốc, gay cấn của chiến tranh.",
     achievements: [
       {
         icon: Star,
-        title: "Formidable Adversary",
-        description: "Leads aggressive assaults on allied strongholds.",
+        title: "Nhiệm vụ",
+        description:
+          "Tấn công cứ điểm của ta trong trận càn lớn, là mối đe dọa trực tiếp đến các chiến sĩ của ta.",
       },
       {
         icon: Heart,
-        title: "Symbol of Conflict",
-        description: "Represents war’s ruthless nature with precision.",
+        title: "Tính cách",
+        description:
+          "Lạnh lùng, tàn bạo, không nhân nhượng; là biểu tượng của sự ác liệt, phi nhân trong chiến tranh.",
       },
     ],
     bgColor: "from-pink-500 to-rose-600",
@@ -241,10 +251,10 @@ function CharacterCarousel() {
       <div className="container mx-auto px-4 max-w-7xl mb-12">
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Character Gallery
+            Giới thiệu nhân vật
           </h1>
           <p className="text-lg text-gray-600">
-            Discover the stories behind the personalities
+            Khám phá những câu chuyện đằng sau những nhân vật
           </p>
         </div>
         {/* Character Selector */}
