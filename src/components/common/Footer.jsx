@@ -1,5 +1,5 @@
 import { Facebook, Instagram, Youtube, Mail } from "lucide-react";
-import logo from "@/assets/images/logo.png"; // Adjust path if different
+import logo from "@/assets/images/logo/text-logo.png";
 import {
   faFacebook,
   faInstagram,
@@ -38,10 +38,10 @@ export default function Footer() {
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between">
           <a className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-            <img src={logo} className="h-8" alt="Dream Draft Logo" />
+            <img src={logo} className="h-24" alt="Dream Draft Logo" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap text-[#425261]">
-              <span>DREAM </span>
-              <span className="text-[#f6a248]">DRAFT</span>
+              <span>Màu Của </span>
+              <span className="text-[#f6a248]">Hòa Bình</span>
             </span>
           </a>
 
