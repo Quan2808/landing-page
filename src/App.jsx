@@ -18,7 +18,7 @@ function App() {
   ]);
 
   return (
-    <div className="relative">
+    <div className="relative scroll-smooth md:scroll-auto scrollbar-hide">
       <Header />
       {/* Sections */}
 
