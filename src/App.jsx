@@ -43,7 +43,7 @@ function App() {
       </div>
 
       {/* Navigation buttons */}
-      <NavigationButtons />
+      {/* <NavigationButtons /> */}
 
       <Footer></Footer>
     </div>
