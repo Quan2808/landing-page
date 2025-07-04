@@ -13,7 +13,7 @@ const socialLinks = [
   {
     label: "YouTube",
     icon: <FontAwesomeIcon icon={faYoutube} size="xl" />,
-    href: "https://youtube.com/@dreamdraft",
+    href: "https://youtube.com/@dreamdraft36",
   },
   {
     label: "TikTok",
@@ -48,7 +48,7 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row sm:items-start sm:gap-8">
             <div>
               <span className="block text-sm font-medium text-[#425261] mb-2">
-                Contact us at:
+                Liên hệ với chúng tôi:
               </span>
               <ul className="flex items-center text-sm font-medium text-[#425261]">
                 <li className="hover:underline">
@@ -68,7 +68,7 @@ export default function Footer() {
 
             <div>
               <span className="block text-sm font-medium text-[#425261] mb-2">
-                Social links:
+                Liên kết xã hội:
               </span>
               <ul className="flex items-center text-sm font-medium text-[#425261]">
                 {socialLinks.map((link) => (

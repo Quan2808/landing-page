@@ -94,7 +94,7 @@ const Header = () => {
             : ""
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo bên trái */}
             <div className="flex items-center">
@@ -107,7 +107,7 @@ const Header = () => {
                     }`}
                   >
                     <span>Màu Của </span>
-                    <span className="text-[#f6a248]">Hòa Bình</span>
+                    <span className="text-[#f89e39]">Hòa Bình</span>
                   </h1>
                 </div>
               </div>
@@ -117,7 +117,7 @@ const Header = () => {
             <nav className="hidden md:flex space-x-8 relative" ref={navRef}>
               {/* Animated underline */}
               <div
-                className="absolute bottom-0 h-0.5 bg-[#f6a248] rounded-full transition-all duration-300 ease-out"
+                className="absolute bottom-0 h-0.5 bg-[#f89e39] rounded-full transition-all duration-300 ease-out"
                 style={underlineStyle}
               />
 
@@ -130,9 +130,9 @@ const Header = () => {
                     e.preventDefault();
                     scrollToSection(item.id);
                   }}
-                  className={`text-sm font-medium transition-all duration-300 hover:text-[#f6a248] relative no-underline px-2 py-1 ${
+                  className={`text-sm font-medium transition-all duration-300 hover:text-[#f89e39] relative no-underline px-2 py-1 ${
                     activeSection === item.id
-                      ? "text-[#f6a248]"
+                      ? "text-[#f89e39]"
                       : isVisible
                       ? "text-[#425261]"
                       : "text-white"
@@ -148,7 +148,7 @@ const Header = () => {
             <div className="md:hidden">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className={`inline-flex items-center justify-center p-2 hover:text-[#f6a248] transition-colors duration-300 ${
+                className={`inline-flex items-center justify-center p-2 hover:text-[#f89e39] transition-colors duration-300 ${
                   isVisible ? "text-[#425261]" : "text-white"
                 }`}
               >
@@ -183,9 +183,9 @@ const Header = () => {
                     scrollToSection(item.id);
                     setMobileMenuOpen(false);
                   }}
-                  className={`block px-3 py-2 text-base font-medium transition-all duration-300 hover:text-[#f6a248] ${
+                  className={`block px-3 py-2 text-base font-medium transition-all duration-300 hover:text-[#f89e39] ${
                     activeSection === item.id
-                      ? "text-[#f6a248] border-l-2 border-[#f6a248]"
+                      ? "text-[#f89e39] border-l-2 border-[#f89e39]"
                       : isVisible
                       ? "text-[#425261]"
                       : "text-white"

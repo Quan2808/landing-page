@@ -249,7 +249,11 @@ function CharacterCarousel() {
     >
       {/* Character Navigation */}
       <div className="container mx-auto px-4 max-w-7xl mb-12">
-        <div className="text-center mb-8">
+        <div
+          className={`text-center mb-8"  transition-all duration-1000 ease-in-out transform ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Giới thiệu nhân vật
           </h1>
