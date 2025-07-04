@@ -77,43 +77,43 @@ const HeroSection = () => {
           </div>
 
           {/* Video Controls - Bottom Right */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-6">
             {/* Play/Pause Button */}
             <button
               onClick={togglePlay}
-              className="group relative flex items-center justify-center w-12 h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full transition-all duration-200 hover:scale-110"
+              className="group relative flex items-center justify-center w-14 h-14 bg-white/30 hover:bg-white/50 backdrop-blur-md rounded-full transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-white/30"
               aria-label={isPlaying ? "Pause video" : "Play video"}
             >
               {isPlaying ? (
-                <Pause className="w-5 h-5 text-white" />
+                <Pause className="w-6 h-6 text-white" />
               ) : (
-                <Play className="w-5 h-5 text-white ml-1" />
+                <Play className="w-6 h-6 text-white ml-1" />
               )}
-              <div className="absolute inset-0 rounded-full ring-2 ring-white/50 opacity-0 group-hover:opacity-100 group-hover:ring-white/70 transition-all duration-200"></div>
+              <div className="absolute inset-0 rounded-full ring-2 ring-white/70 opacity-0 group-hover:opacity-100 group-hover:ring-white transition-all duration-300 scale-110"></div>
             </button>
 
             {/* Volume Button */}
             <button
               onClick={toggleMute}
-              className="group relative flex items-center justify-center w-12 h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full transition-all duration-200 hover:scale-110"
+              className="group relative flex items-center justify-center w-14 h-14 bg-white/30 hover:bg-white/50 backdrop-blur-md rounded-full transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-white/30"
               aria-label={isMuted ? "Unmute video" : "Mute video"}
             >
               {isMuted ? (
-                <VolumeX className="w-5 h-5 text-white" />
+                <VolumeX className="w-6 h-6 text-white" />
               ) : (
-                <Volume2 className="w-5 h-5 text-white" />
+                <Volume2 className="w-6 h-6 text-white" />
               )}
-              <div className="absolute inset-0 rounded-full ring-2 ring-white/50 opacity-0 group-hover:opacity-100 group-hover:ring-white/70 transition-all duration-200"></div>
+              <div className="absolute inset-0 rounded-full ring-2 ring-white/70 opacity-0 group-hover:opacity-100 group-hover:ring-white transition-all duration-300 scale-110"></div>
             </button>
 
             {/* Fullscreen Button */}
             <button
               onClick={toggleFullscreen}
-              className="group relative flex items-center justify-center w-12 h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full transition-all duration-200 hover:scale-110"
+              className="group relative flex items-center justify-center w-14 h-14 bg-white/30 hover:bg-white/50 backdrop-blur-md rounded-full transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-white/30"
               aria-label="Enter fullscreen"
             >
-              <Maximize2 className="w-5 h-5 text-white" />
-              <div className="absolute inset-0 rounded-full ring-2 ring-white/50 opacity-0 group-hover:opacity-100 group-hover:ring-white/70 transition-all duration-200"></div>
+              <Maximize2 className="w-6 h-6 text-white" />
+              <div className="absolute inset-0 rounded-full ring-2 ring-white/70 opacity-0 group-hover:opacity-100 group-hover:ring-white transition-all duration-300 scale-110"></div>
             </button>
           </div>
         </div>
