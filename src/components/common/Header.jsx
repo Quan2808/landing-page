@@ -1,10 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import logo from "@/assets/images/lg2.png";
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [underlineStyle, setUnderlineStyle] = useState({});
+  const navRef = useRef(null);
 
   // Navigation items
   const navigationItems = [
@@ -45,6 +47,29 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Update underline position when active section changes
+  useEffect(() => {
+    if (navRef.current) {
+      const activeLink = navRef.current.querySelector(
+        `[data-section="${activeSection}"]`
+      );
+      if (activeLink) {
+        const navContainer = navRef.current;
+        const containerRect = navContainer.getBoundingClientRect();
+        const linkRect = activeLink.getBoundingClientRect();
+
+        const left = linkRect.left - containerRect.left;
+        const width = linkRect.width;
+
+        setUnderlineStyle({
+          left: `${left}px`,
+          width: `${width}px`,
+          opacity: 1,
+        });
+      }
+    }
+  }, [activeSection, isVisible]);
 
   // Smooth scroll to section
   const scrollToSection = (sectionId) => {
@@ -89,16 +114,23 @@ const Header = () => {
             </div>
 
             {/* Navigation Menu */}
-            <nav className="hidden md:flex space-x-8">
+            <nav className="hidden md:flex space-x-8 relative" ref={navRef}>
+              {/* Animated underline */}
+              <div
+                className="absolute bottom-0 h-0.5 bg-[#f6a248] rounded-full transition-all duration-300 ease-out"
+                style={underlineStyle}
+              />
+
               {navigationItems.map((item) => (
                 <a
                   key={item.id}
                   href={`#${item.id}`}
+                  data-section={item.id}
                   onClick={(e) => {
                     e.preventDefault();
                     scrollToSection(item.id);
                   }}
-                  className={`text-sm font-medium transition-all duration-300 hover:text-[#f6a248] relative no-underline ${
+                  className={`text-sm font-medium transition-all duration-300 hover:text-[#f6a248] relative no-underline px-2 py-1 ${
                     activeSection === item.id
                       ? "text-[#f6a248]"
                       : isVisible
@@ -108,9 +140,6 @@ const Header = () => {
                   style={{ textDecoration: "none" }}
                 >
                   {item.label}
-                  {activeSection === item.id && (
-                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#f6a248] rounded-full"></span>
-                  )}
                 </a>
               ))}
             </nav>
