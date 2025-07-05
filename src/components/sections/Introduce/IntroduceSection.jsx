@@ -4,7 +4,7 @@ import { Quote, BookOpen, Heart, Palette } from "lucide-react";
 import useIntersectionObserver from "@hooks/useIntersectionObserver.js";
 
 export default function IntroduceSection() {
-  const [sectionRef, isVisible] = useIntersectionObserver(0.6);
+  const [sectionRef, isVisible] = useIntersectionObserver(0.2);
 
   return (
     <section

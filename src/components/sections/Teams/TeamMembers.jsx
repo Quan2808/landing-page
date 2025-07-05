@@ -105,7 +105,7 @@ export default function TeamMembers({
         </button>
 
         {/* Desktop Carousel Indicators */}
-        <div className="flex justify-center mt-6 space-x-2">
+        {/* <div className="flex justify-center mt-6 space-x-2">
           {Array.from(
             { length: Math.ceil(teamMembers.length / 5) },
             (_, index) => (
@@ -121,7 +121,7 @@ export default function TeamMembers({
               />
             )
           )}
-        </div>
+        </div> */}
       </div>
 
       {/* Mobile Carousel Layout */}
@@ -134,7 +134,7 @@ export default function TeamMembers({
             {teamMembers.map((member, index) => (
               <div key={index} className="w-full flex-shrink-0 px-4">
                 <div className="bg-white rounded-2xl shadow-xl overflow-hidden mx-auto max-w-sm">
-                  <div className="relative mb-6">
+                  <div className="relative m-6">
                     {member.src ? (
                       <img
                         src={member.src}
@@ -185,7 +185,7 @@ export default function TeamMembers({
         </button>
 
         {/* Carousel Indicators */}
-        <div className="flex justify-center mt-6 space-x-2">
+        {/* <div className="flex justify-center mt-6 space-x-2">
           {teamMembers.map((_, index) => (
             <button
               key={index}
@@ -198,7 +198,7 @@ export default function TeamMembers({
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );

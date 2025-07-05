@@ -31,14 +31,6 @@ const technicalLogos = [
     category: "3D Modeling",
   },
   {
-    id: 4,
-    alt: "Arnold",
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Arnold-logo.svg/2560px-Arnold-logo.svg.png",
-    fallbackSrc: "https://via.placeholder.com/150x48/ea580c/white?text=Arnold",
-    description: "Render",
-    category: "Rendering",
-  },
-  {
     id: 5,
     alt: "iClone 8",
     src: "https://www.reallusion.com/about/includes/image/press_resource_product/ic/iclone8_1000x1000_whitebg_colorlogo_word_version.png",

@@ -57,7 +57,7 @@ const HeroSection = () => {
               DREAM DRAFT
             </h1>
             <p className="text-xl sm:text-2xl text-gray-200 mb-4">
-              Đề tài: Màu Của Hòa Bình
+              Phim hoạt hình 3D: Màu Của Hòa Bình
             </p>
             <p className="text-lg sm:text-xl text-gray-300">
               {timeLeft ? (

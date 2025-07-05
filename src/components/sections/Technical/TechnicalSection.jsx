@@ -10,12 +10,12 @@ const features = [
       "Tạo ra các mô hình 3D và kết cấu chi tiết, chân thực bằng Character Creator 4, Maya 3D và Cinema 4D.",
     icon: CubeIcon,
   },
-  {
-    name: "Kết xuất",
-    description:
-      "Đạt được đầu ra hình ảnh tuyệt đẹp với Arnold, mang lại khả năng kết xuất siêu thực cho dự án.",
-    icon: SparklesIcon,
-  },
+  // {
+  //   name: "Kết xuất",
+  //   description:
+  //     "Đạt được đầu ra hình ảnh tuyệt đẹp với mang lại khả năng kết xuất siêu thực cho dự án.",
+  //   icon: SparklesIcon,
+  // },
   {
     name: "Hoạt hình và Hậu kỳ",
     description:
@@ -29,7 +29,6 @@ const renderDescriptionWithGradient = (description) => {
     "Maya 3D",
     "Cinema 4D",
     "Character Creator 4",
-    "Arnold",
     "iClone 8",
     "After Effects",
     "Premiere Pro",
