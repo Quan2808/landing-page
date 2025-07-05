@@ -134,7 +134,7 @@ export default function TeamMembers({
             {teamMembers.map((member, index) => (
               <div key={index} className="w-full flex-shrink-0 px-4">
                 <div className="bg-white rounded-2xl shadow-xl overflow-hidden mx-auto max-w-sm">
-                  <div className="relative m-6">
+                  <div className="relative mb-6">
                     {member.src ? (
                       <img
                         src={member.src}
