@@ -11,11 +11,11 @@ const Header = () => {
   // Navigation items
   const navigationItems = [
     { id: "hero", label: "Trang chủ" },
+    { id: "BrandIntroduction", label: "Dream Draft" },
     { id: "introduce", label: "Giới thiệu" },
     { id: "characterIntroduce", label: "Nhân vật" },
     { id: "teams", label: "Đội ngũ" },
     { id: "Technical", label: "Kỹ thuật" },
-    { id: "BrandIntroduction", label: "Dream Draft" },
   ];
 
   useEffect(() => {
