@@ -1,6 +1,42 @@
-import React from "react";
-import { Star, Target, Users, Eye, Lightbulb } from "lucide-react";
-import useIntersectionObserver from "@hooks/useIntersectionObserver.js";
+import React, { useState, useEffect, useRef } from "react";
+import {
+  Star,
+  Target,
+  Users,
+  Eye,
+  Lightbulb,
+  Play,
+  Award,
+  Heart,
+} from "lucide-react";
+
+const useIntersectionObserver = (threshold = 0.2) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const elementRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold }
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => {
+      if (elementRef.current) {
+        observer.unobserve(elementRef.current);
+      }
+    };
+  }, [threshold]);
+
+  return [elementRef, isVisible];
+};
 
 export default function BrandIntroductionSection() {
   const [sectionRef, isVisible] = useIntersectionObserver(0.2);
@@ -9,33 +45,58 @@ export default function BrandIntroductionSection() {
     {
       icon: Lightbulb,
       title: "Sáng tạo không giới hạn",
-      description: "Biến mọi ý tưởng bay bổng thành hiện thực qua công nghệ 3D",
+      description:
+        "Biến mọi ý tưởng bay bổng thành hiện thực qua công nghệ 3D, kết hợp yếu tố hiện thực với sự sáng tạo nghệ thuật",
       gradient: "from-purple-500 to-pink-600",
     },
     {
       icon: Star,
       title: "Học hỏi không ngừng",
-      description: "Tự tìm tòi, chinh phục những thử thách kỹ thuật mới",
+      description:
+        "Tự tìm tòi, chinh phục những thử thách kỹ thuật mới từ Maya, C4D đến Blender, CC4, iClone",
       gradient: "from-blue-500 to-cyan-600",
     },
     {
       icon: Target,
       title: "Ý nghĩa trong từng tác phẩm",
-      description: "Mỗi dự án đều mang một thông điệp tích cực",
+      description:
+        "Mỗi dự án đều mang thông điệp tích cực, góp phần giáo dục và truyền cảm hứng cho cộng đồng",
       gradient: "from-green-500 to-emerald-600",
     },
     {
       icon: Users,
       title: "Tinh thần đoàn kết",
-      description: "Cùng nhau vượt qua mọi khó khăn để đạt được mục tiêu chung",
+      description:
+        "Cùng nhau vượt qua mọi khó khăn, quản lý quy trình chuyên nghiệp để đạt được mục tiêu chung",
       gradient: "from-orange-500 to-red-600",
+    },
+  ];
+
+  const achievements = [
+    {
+      icon: Play,
+      title: "Phim 3D hoàn chỉnh",
+      description: "10 phút nội dung chất lượng cao",
+      color: "text-red-600",
+    },
+    {
+      icon: Award,
+      title: "Quy trình chuyên nghiệp",
+      description: "Từ ý tưởng đến hậu kỳ hoàn thiện",
+      color: "text-yellow-600",
+    },
+    {
+      icon: Heart,
+      title: "Thông điệp nhân văn",
+      description: "Giáo dục lòng biết ơn và yêu nước",
+      color: "text-pink-600",
     },
   ];
 
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen overflow-hidden py-16 px-6 lg:px-8 "
+      className="relative min-h-screen overflow-hidden py-16 px-6 lg:px-8"
     >
       {/* Decorative background elements */}
       <div className="absolute inset-0 pointer-events-none">
@@ -45,7 +106,7 @@ export default function BrandIntroductionSection() {
         <div className="absolute bottom-20 right-1/3 w-44 h-44 bg-gradient-to-br from-yellow-200 to-red-200 rounded-full opacity-10"></div>
       </div>
 
-      <div className="relative z-10 mx-auto max-w-6xl">
+      <div className="relative z-10 mx-auto max-w-7xl">
         {/* Header */}
         <div className="text-center mb-16">
           <div
@@ -58,11 +119,41 @@ export default function BrandIntroductionSection() {
             <h1 className="text-5xl font-bold text-[#f6a248] mb-4">
               Dream Draft
             </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed mb-4">
               Nhóm sinh viên Thiết kế Đồ họa với tinh thần "Làm khác đi"
             </p>
           </div>
         </div>
+        {/* Featured Project Highlight */}
+        {/* <div
+          className={`mb-16 transition-all duration-1000 ease-out delay-200 transform ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
+          <div className="bg-gradient-to-r from-orange-500 to-red-600 rounded-3xl shadow-2xl p-8 text-white text-center">
+            <h2 className="text-3xl font-bold mb-4">Dự án nổi bật</h2>
+            <h3 className="text-4xl font-extrabold mb-4 text-[#f6a248] ">
+              "Màu của hòa bình"
+            </h3>
+            <p className="text-xl mb-6 max-w-3xl mx-auto">
+              Bộ phim hoạt hình 3D về chiến tranh Việt Nam - Thể hiện khát vọng
+              hòa bình qua ngôn ngữ điện ảnh hiện đại
+            </p>
+            <div className="flex justify-center space-x-6">
+              {achievements.map((achievement, index) => (
+                <div key={index} className="text-center">
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <achievement.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <p className="font-semibold text-sm">{achievement.title}</p>
+                  <p className="text-xs opacity-90">
+                    {achievement.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div> */}
 
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left Column - About & Mission */}
@@ -84,8 +175,8 @@ export default function BrandIntroductionSection() {
                     Về chúng tôi
                   </h2>
                 </div>
-                <p className="text-lg leading-relaxed text-gray-700">
-                  <span className="font-semibold text-indigo-600">
+                <p className="text-lg leading-relaxed text-gray-700 mb-4">
+                  <span className="font-semibold text-[#f6a248] ">
                     Dream Draft
                   </span>{" "}
                   là nhóm sinh viên ngành Thiết kế Đồ họa tại
@@ -97,6 +188,20 @@ export default function BrandIntroductionSection() {
                   </span>{" "}
                   - không ngừng tìm tòi, khám phá và chinh phục những công cụ
                   mới trong lĩnh vực hoạt hình 3D.
+                </p>
+                <p className="text-lg leading-relaxed text-gray-700">
+                  Chúng tôi thành thạo các phần mềm chuyên nghiệp như
+                  <span className="font-medium text-blue-600">
+                    {" "}
+                    Maya, Cinema 4D, Premiere Pro
+                  </span>
+                  , đồng thời chủ động nghiên cứu các công cụ mới như
+                  <span className="font-medium text-green-600">
+                    {" "}
+                    Blender, CC4, iClone 8
+                  </span>
+                  để mang đến những trải nghiệm thị giác độc đáo và chuyên
+                  nghiệp.
                 </p>
               </div>
             </div>
@@ -116,7 +221,7 @@ export default function BrandIntroductionSection() {
                   </div>
                   <h2 className="text-3xl font-bold text-gray-900">Sứ mệnh</h2>
                 </div>
-                <p className="text-lg leading-relaxed text-gray-700">
+                <p className="text-lg leading-relaxed text-gray-700 mb-4">
                   Chúng tôi tin rằng nghệ thuật không chỉ là giải trí, mà còn là
                   phương tiện truyền tải những
                   <span className="font-semibold text-purple-600">
@@ -126,6 +231,15 @@ export default function BrandIntroductionSection() {
                   đến cộng đồng. Mỗi dự án của Dream Draft đều hướng đến việc
                   tạo ra những sản phẩm có giá trị, góp phần xây dựng một thế
                   giới tốt đẹp hơn.
+                </p>
+                <p className="text-lg leading-relaxed text-gray-700">
+                  Dự án đại diện
+                  <span className="font-bold text-[#f6a248] ">
+                    "Màu của hòa bình"
+                  </span>
+                  - bộ phim hoạt hình 3D 10 phút về chiến tranh Việt Nam, thể
+                  hiện khát vọng hòa bình qua ngôn ngữ điện ảnh hiện đại, nhằm
+                  giáo dục lòng biết ơn và tinh thần yêu nước cho thế hệ trẻ.
                 </p>
               </div>
             </div>
@@ -145,7 +259,7 @@ export default function BrandIntroductionSection() {
                   </div>
                   <h2 className="text-3xl font-bold text-gray-900">Tầm nhìn</h2>
                 </div>
-                <p className="text-lg leading-relaxed text-gray-700">
+                <p className="text-lg leading-relaxed text-gray-700 mb-4">
                   Dream Draft hướng tới việc trở thành một
                   <span className="font-semibold text-blue-600">
                     {" "}
@@ -153,6 +267,17 @@ export default function BrandIntroductionSection() {
                   </span>
                   , được biết đến với những tác phẩm chất lượng cao và giàu ý
                   nghĩa nhân văn.
+                </p>
+                <p className="text-lg leading-relaxed text-gray-700">
+                  Chúng tôi không chỉ tạo ra sản phẩm giải trí, mà còn đóng vai
+                  trò
+                  <span className="font-medium text-indigo-600">
+                    {" "}
+                    "cầu nối"
+                  </span>
+                  giúp thế hệ trẻ hiểu sâu hơn về lịch sử dân tộc, góp phần xây
+                  dựng ngành công nghiệp sáng tạo Việt Nam với những tác phẩm
+                  mang đậm bản sắc và chiều sâu văn hóa.
                 </p>
               </div>
             </div>
@@ -210,19 +335,6 @@ export default function BrandIntroductionSection() {
             </div>
           </div>
         </div>
-
-        {/* Bottom decorative element */}
-        {/* <div
-          className={`mt-16 text-center transition-all duration-1000 ease-out delay-1000 transform ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
-          <div className="inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-8 py-3 rounded-full text-lg font-medium shadow-lg">
-            <Star className="w-5 h-5" />
-            <span>"Làm khác đi" - Tinh thần của Dream Draft</span>
-            <Star className="w-5 h-5" />
-          </div>
-        </div> */}
       </div>
     </section>
   );
