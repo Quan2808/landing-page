@@ -35,7 +35,9 @@ const Header = () => {
         const element = document.getElementById(sectionId);
         if (element) {
           const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
+          // Adjust for mobile header height
+          const headerOffset = window.innerWidth < 768 ? 80 : 100;
+          return rect.top <= headerOffset && rect.bottom >= headerOffset;
         }
         return false;
       });
@@ -76,7 +78,8 @@ const Header = () => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const headerHeight = 80; // Adjust based on your header height
+      // Different header heights for mobile and desktop
+      const headerHeight = window.innerWidth < 768 ? 70 : 80;
       const elementPosition = element.offsetTop - headerHeight;
 
       window.scrollTo({
@@ -91,15 +94,19 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out">
       <div className="bg-white/10 backdrop-blur-md border-b border-white/20 shadow-lg transition-all duration-500 ease-in-out">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo bên trái */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 sm:h-16">
+            {/* Logo bên trái - Responsive sizing */}
             <div className="flex items-center">
               <div className="flex-shrink-0 flex items-center">
-                <img src={logo} alt="Logo" className="h-24 mr-3" />
-                <div>
+                <img
+                  src={logo}
+                  alt="Logo"
+                  className="h-16 sm:h-20 lg:h-24 mr-2 sm:mr-3"
+                />
+                <div className="hidden sm:block">
                   <h1
-                    className={`text-2xl font-bold tracking-tight transition-colors duration-300 ${
+                    className={`text-lg sm:text-xl lg:text-2xl font-bold tracking-tight transition-colors duration-300 ${
                       isVisible ? "text-[#425261]" : "text-white"
                     }`}
                   >
@@ -110,8 +117,11 @@ const Header = () => {
               </div>
             </div>
 
-            {/* Navigation Menu */}
-            <nav className="hidden md:flex space-x-8 relative" ref={navRef}>
+            {/* Navigation Menu - Desktop */}
+            <nav
+              className="hidden md:flex space-x-6 lg:space-x-8 relative"
+              ref={navRef}
+            >
               {/* Animated underline */}
               <div
                 className="absolute bottom-0 h-0.5 bg-[#f89e39] rounded-full transition-all duration-300 ease-out"
@@ -127,7 +137,7 @@ const Header = () => {
                     e.preventDefault();
                     scrollToSection(item.id);
                   }}
-                  className={`text-sm font-medium transition-all duration-300 hover:text-[#f89e39] relative no-underline px-2 py-1 ${
+                  className={`text-xs lg:text-sm font-medium transition-all duration-300 hover:text-[#f89e39] relative no-underline px-2 py-1 whitespace-nowrap ${
                     activeSection === item.id
                       ? "text-[#f89e39]"
                       : isVisible
@@ -150,17 +160,26 @@ const Header = () => {
                 }`}
               >
                 <svg
-                  className="h-6 w-6"
+                  className="h-5 w-5 sm:h-6 sm:w-6"
                   stroke="currentColor"
                   fill="none"
                   viewBox="0 0 24 24"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
+                  {mobileMenuOpen ? (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  ) : (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  )}
                 </svg>
               </button>
             </div>
@@ -168,9 +187,15 @@ const Header = () => {
         </div>
 
         {/* Mobile Navigation Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden bg-white/10 backdrop-blur-md border-t border-white/20">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+        <div
+          className={`md:hidden transition-all duration-300 ease-in-out ${
+            mobileMenuOpen
+              ? "max-h-96 opacity-100"
+              : "max-h-0 opacity-0 overflow-hidden"
+          }`}
+        >
+          <div className="bg-white/95 backdrop-blur-md border-t border-white/20">
+            <div className="px-2 pt-2 pb-3 space-y-1 max-h-80 overflow-y-auto">
               {navigationItems.map((item) => (
                 <a
                   key={item.id}
@@ -180,12 +205,10 @@ const Header = () => {
                     scrollToSection(item.id);
                     setMobileMenuOpen(false);
                   }}
-                  className={`block px-3 py-2 text-base font-medium transition-all duration-300 hover:text-[#f89e39] ${
+                  className={`block px-3 py-3 text-sm font-medium transition-all duration-300 hover:text-[#f89e39] hover:bg-white/20 rounded-lg ${
                     activeSection === item.id
-                      ? "text-[#f89e39] border-l-2 border-[#f89e39]"
-                      : isVisible
-                      ? "text-[#425261]"
-                      : "text-white"
+                      ? "text-[#f89e39] bg-white/10 border-l-3 border-[#f89e39]"
+                      : "text-[#425261]"
                   }`}
                   style={{ textDecoration: "none" }}
                 >
@@ -194,7 +217,7 @@ const Header = () => {
               ))}
             </div>
           </div>
-        )}
+        </div>
       </div>
     </header>
   );

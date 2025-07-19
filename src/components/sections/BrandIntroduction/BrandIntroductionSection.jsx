@@ -55,10 +55,9 @@ export default function BrandIntroductionSection() {
                 : "opacity-0 translate-y-10 scale-75"
             }`}
           >
-            <h1 className="text-5xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
+            <h1 className="text-5xl font-bold text-[#f6a248] mb-4">
               Dream Draft
             </h1>
-            <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mb-6"></div>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Nhóm sinh viên Thiết kế Đồ họa với tinh thần "Làm khác đi"
             </p>
@@ -171,7 +170,6 @@ export default function BrandIntroductionSection() {
               <h2 className="text-3xl font-bold text-gray-900 text-center mb-3">
                 Giá trị cốt lõi
               </h2>
-              <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto"></div>
             </div>
 
             <div className="space-y-6">
