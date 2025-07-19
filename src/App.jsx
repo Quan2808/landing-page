@@ -6,6 +6,7 @@ import {
   IntroduceSection,
   TechnicalSection,
   CharacterIntroduceSection,
+  BrandIntroductionSection,
 } from "@components/sections";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
     "characterIntroduce",
     "teams",
     "Technical",
+    "BrandIntroduction",
   ]);
 
   return (
@@ -40,6 +42,10 @@ function App() {
 
       <div id="Technical" className="min-h-screen">
         <TechnicalSection></TechnicalSection>
+      </div>
+
+      <div id="BrandIntroduction" className="min-h-screen">
+        <BrandIntroductionSection></BrandIntroductionSection>
       </div>
 
       {/* Navigation buttons */}

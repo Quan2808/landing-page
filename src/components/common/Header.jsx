@@ -15,6 +15,7 @@ const Header = () => {
     { id: "characterIntroduce", label: "Nhân vật" },
     { id: "teams", label: "Đội ngũ" },
     { id: "Technical", label: "Kỹ thuật" },
+    { id: "BrandIntroduction", label: "Dream Draft" },
   ];
 
   useEffect(() => {

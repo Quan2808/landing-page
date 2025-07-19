@@ -9,6 +9,10 @@ body {
   background-attachment: fixed;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .text-accent {
   color: #eaa257;
 }

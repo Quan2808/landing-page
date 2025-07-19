@@ -204,7 +204,7 @@ const characters = [
     name: "Anh Hoang",
     stageName: "Quân địch",
     description:
-      "Là đại diện cho lực lượng đối lập trong cuộc chiến tại thành cổ Quảng Trị. Nhân vật này mang hình ảnh nguy hiểm, lạnh lùng và khó lường, xuất hiện trong những tình huống căng thẳng, góp phần đẩy cao xung đột và thể hiện rõ sự tàn khốc, gay cấn của chiến tranh.",
+      "Là đại diện cho lực lượng đối lập trong cuộc chiến. Nhân vật này mang hình ảnh nguy hiểm, lạnh lùng và khó lường, xuất hiện trong những tình huống căng thẳng, góp phần đẩy cao xung đột và thể hiện rõ sự tàn khốc, gay cấn của chiến tranh.",
     achievements: [
       {
         icon: Star,
