@@ -1,6 +1,7 @@
 import { Play, Pause, Volume2, VolumeX, Maximize2 } from "lucide-react";
 import useVideoControls from "@hooks/useVideoControls";
 import useCountdownToRelease from "@hooks/useCountdownToRelease";
+import tb from "@images/thumbnail.jpg";
 
 const HeroSection = () => {
   const {
@@ -22,8 +23,8 @@ const HeroSection = () => {
         {showThumbnail && (
           <img
             alt="Video Thumbnail"
-            src="https://pianofingers.vn/wp-content/uploads/2024/04/Sheet-piano-Thie%CC%82n-Ly%CC%81-O%CC%9Bi-Jack-2.jpeg"
-            className="absolute inset-0 w-full h-full object-cover"
+            src={tb}
+            className="absolute inset-0 w-full h-full object-cover object-top"
             aria-hidden="true"
           />
         )}
@@ -48,74 +49,46 @@ const HeroSection = () => {
       {/* Overlay for better contrast */}
       <div className="absolute inset-0 bg-black/40"></div>
 
-      {/* Content positioned at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-12">
-        <div className="max-w-7xl mx-auto flex items-end justify-between">
-          {/* Text Content - Bottom Left */}
-          <div className="max-w-2xl">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4">
-              DREAM DRAFT
-            </h1>
-            <p className="text-xl sm:text-2xl text-gray-200 mb-4">
-              Phim hoạt hình 3D: Màu Của Hòa Bình
-            </p>
-            <p className="text-lg sm:text-xl text-gray-300">
-              {timeLeft ? (
-                <>
-                  COMING SOON IN:{" "}
-                  <span className="font-mono font-semibold text-white">
-                    {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m{" "}
-                    {timeLeft.seconds}s
-                  </span>
-                </>
-              ) : (
-                <span className="text-green-400 font-semibold">
-                  WE'RE LIVE!
-                </span>
-              )}
-            </p>
-          </div>
+      {/* Video Controls - Bottom Right */}
+      <div className="absolute bottom-6 right-6 sm:bottom-8 sm:right-8 lg:bottom-12 lg:right-12">
+        <div className="flex items-center space-x-6">
+          {/* Play/Pause Button */}
+          <button
+            onClick={togglePlay}
+            className="group relative flex items-center justify-center w-14 h-14 bg-white/30 hover:bg-white/50 backdrop-blur-md rounded-full transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-white/30"
+            aria-label={isPlaying ? "Pause video" : "Play video"}
+          >
+            {isPlaying ? (
+              <Pause className="w-6 h-6 text-white" />
+            ) : (
+              <Play className="w-6 h-6 text-white ml-1" />
+            )}
+            <div className="absolute inset-0 rounded-full ring-2 ring-white/70 opacity-0 group-hover:opacity-100 group-hover:ring-white transition-all duration-300 scale-110"></div>
+          </button>
 
-          {/* Video Controls - Bottom Right */}
-          <div className="flex items-center space-x-6">
-            {/* Play/Pause Button */}
-            <button
-              onClick={togglePlay}
-              className="group relative flex items-center justify-center w-14 h-14 bg-white/30 hover:bg-white/50 backdrop-blur-md rounded-full transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-white/30"
-              aria-label={isPlaying ? "Pause video" : "Play video"}
-            >
-              {isPlaying ? (
-                <Pause className="w-6 h-6 text-white" />
-              ) : (
-                <Play className="w-6 h-6 text-white ml-1" />
-              )}
-              <div className="absolute inset-0 rounded-full ring-2 ring-white/70 opacity-0 group-hover:opacity-100 group-hover:ring-white transition-all duration-300 scale-110"></div>
-            </button>
+          {/* Volume Button */}
+          <button
+            onClick={toggleMute}
+            className="group relative flex items-center justify-center w-14 h-14 bg-white/30 hover:bg-white/50 backdrop-blur-md rounded-full transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-white/30"
+            aria-label={isMuted ? "Unmute video" : "Mute video"}
+          >
+            {isMuted ? (
+              <VolumeX className="w-6 h-6 text-white" />
+            ) : (
+              <Volume2 className="w-6 h-6 text-white" />
+            )}
+            <div className="absolute inset-0 rounded-full ring-2 ring-white/70 opacity-0 group-hover:opacity-100 group-hover:ring-white transition-all duration-300 scale-110"></div>
+          </button>
 
-            {/* Volume Button */}
-            <button
-              onClick={toggleMute}
-              className="group relative flex items-center justify-center w-14 h-14 bg-white/30 hover:bg-white/50 backdrop-blur-md rounded-full transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-white/30"
-              aria-label={isMuted ? "Unmute video" : "Mute video"}
-            >
-              {isMuted ? (
-                <VolumeX className="w-6 h-6 text-white" />
-              ) : (
-                <Volume2 className="w-6 h-6 text-white" />
-              )}
-              <div className="absolute inset-0 rounded-full ring-2 ring-white/70 opacity-0 group-hover:opacity-100 group-hover:ring-white transition-all duration-300 scale-110"></div>
-            </button>
-
-            {/* Fullscreen Button */}
-            <button
-              onClick={toggleFullscreen}
-              className="group relative flex items-center justify-center w-14 h-14 bg-white/30 hover:bg-white/50 backdrop-blur-md rounded-full transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-white/30"
-              aria-label="Enter fullscreen"
-            >
-              <Maximize2 className="w-6 h-6 text-white" />
-              <div className="absolute inset-0 rounded-full ring-2 ring-white/70 opacity-0 group-hover:opacity-100 group-hover:ring-white transition-all duration-300 scale-110"></div>
-            </button>
-          </div>
+          {/* Fullscreen Button */}
+          <button
+            onClick={toggleFullscreen}
+            className="group relative flex items-center justify-center w-14 h-14 bg-white/30 hover:bg-white/50 backdrop-blur-md rounded-full transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-white/30"
+            aria-label="Enter fullscreen"
+          >
+            <Maximize2 className="w-6 h-6 text-white" />
+            <div className="absolute inset-0 rounded-full ring-2 ring-white/70 opacity-0 group-hover:opacity-100 group-hover:ring-white transition-all duration-300 scale-110"></div>
+          </button>
         </div>
       </div>
 

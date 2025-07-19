@@ -85,15 +85,11 @@ const Header = () => {
     }
   };
 
+  if (!isVisible) return null;
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out">
-      <div
-        className={`transition-all duration-500 ease-in-out ${
-          isVisible
-            ? "bg-white/10 backdrop-blur-md border-b border-white/20 shadow-lg"
-            : ""
-        }`}
-      >
+      <div className="bg-white/10 backdrop-blur-md border-b border-white/20 shadow-lg transition-all duration-500 ease-in-out">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo bên trái */}
