@@ -72,26 +72,26 @@ export default function BrandIntroductionSection() {
     },
   ];
 
-  const achievements = [
-    {
-      icon: Play,
-      title: "Phim 3D hoàn chỉnh",
-      description: "10 phút nội dung chất lượng cao",
-      color: "text-red-600",
-    },
-    {
-      icon: Award,
-      title: "Quy trình chuyên nghiệp",
-      description: "Từ ý tưởng đến hậu kỳ hoàn thiện",
-      color: "text-yellow-600",
-    },
-    {
-      icon: Heart,
-      title: "Thông điệp nhân văn",
-      description: "Giáo dục lòng biết ơn và yêu nước",
-      color: "text-pink-600",
-    },
-  ];
+  // const achievements = [
+  //   {
+  //     icon: Play,
+  //     title: "Phim 3D hoàn chỉnh",
+  //     description: "10 phút nội dung chất lượng cao",
+  //     color: "text-red-600",
+  //   },
+  //   {
+  //     icon: Award,
+  //     title: "Quy trình chuyên nghiệp",
+  //     description: "Từ ý tưởng đến hậu kỳ hoàn thiện",
+  //     color: "text-yellow-600",
+  //   },
+  //   {
+  //     icon: Heart,
+  //     title: "Thông điệp nhân văn",
+  //     description: "Giáo dục lòng biết ơn và yêu nước",
+  //     color: "text-pink-600",
+  //   },
+  // ];
 
   return (
     <section

@@ -2,7 +2,7 @@ import { Play, Pause, Volume2, VolumeX, Maximize2 } from "lucide-react";
 import useVideoControls from "@hooks/useVideoControls";
 import useCountdownToRelease from "@hooks/useCountdownToRelease";
 import tb from "@images/thumbnail.jpg";
-
+import trailer from "@/assets/videos/trailer.mp4";
 const HeroSection = () => {
   const {
     videoRef,
@@ -38,10 +38,7 @@ const HeroSection = () => {
           onEnded={handleVideoEnd}
           onPlay={() => !showThumbnail}
         >
-          <source
-            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-            type="video/mp4"
-          />
+          <source src={trailer} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
