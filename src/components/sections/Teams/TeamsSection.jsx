@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import useIntersectionObserver from "@hooks/useIntersectionObserver.js";
 import TeamIntro from "./TeamIntro";
 import TeamMembers from "./TeamMembers";
+import { Avatars } from "@images/avatars";
 
 export default function TeamsSection() {
   const [sectionRef, isVisible] = useIntersectionObserver(0.6);
@@ -12,42 +13,42 @@ export default function TeamsSection() {
   const teamMembers = [
     {
       name: "Văn Bá Vũ",
-      src: null,
+      src:  Avatars.vu,
       alt: "Team member Văn Bá Vũ",
       role: "Trưởng nhóm",
       delay: "delay-[1000ms]",
     },
     {
       name: "Nguyễn Ngọc Thống",
-      src: null,
+      src: Avatars.thong,
       alt: "Team member Nguyễn Ngọc Thống",
       role: "Thành viên",
       delay: "delay-[1200ms]",
     },
     {
       name: "Trần Đăng Khôi",
-      src: null,
+      src: Avatars.khoi,
       alt: "Team member Trần Đăng Khôi",
       role: "Thành viên",
       delay: "delay-[1400ms]",
     },
     {
       name: "Lê Thành Tín",
-      src: null,
+      src: Avatars.tin,
       alt: "Team member Lê Thành Tín",
       role: "Thành viên",
       delay: "delay-[1600ms]",
     },
     {
       name: "Nguyễn Thắng Nhật",
-      src: null,
+      src: Avatars.nhat,
       alt: "Team member Nguyễn Thắng Nhật",
       role: "Thành viên",
       delay: "delay-[1800ms]",
     },
     {
       name: "Trần Hữu Bảo",
-      src: null,
+      src: Avatars.bao,
       alt: "Team member Trần Hữu Bảo",
       role: "Operations Manager",
       delay: "delay-[2000ms]",
