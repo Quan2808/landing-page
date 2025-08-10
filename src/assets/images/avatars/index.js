@@ -1,11 +1,11 @@
 // src/assets/images/avatars/index.js
 
-import VuAvatar from "./vu/avatar.png";
-import ThongAvatar from "./thong/avatar.png";
-import KhoiAvatar from "./khoi/avatar.png";
-import TinAvatar from "./tin/avatar.png";
-import NhatAvatar from "./nhat/avatar.png";
-import BaoAvatar from "./bao/avatar.png";
+import VuAvatar from "./vu/avatar2.jpg";
+import ThongAvatar from "./thong/avatar2.jpg";
+import KhoiAvatar from "./khoi/avatar.jpg";
+import TinAvatar from "./tin/avatar.jpg";
+import NhatAvatar from "./nhat/avatar.jpg";
+import BaoAvatar from "./bao/avatar.jpg";
 
 export const Avatars = {
   vu: VuAvatar,
