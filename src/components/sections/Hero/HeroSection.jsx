@@ -2,7 +2,7 @@ import { Play, Pause, Volume2, VolumeX, Maximize2 } from "lucide-react";
 import useVideoControls from "@hooks/useVideoControls";
 import useCountdownToRelease from "@hooks/useCountdownToRelease";
 import tb from "@images/thumbnail.jpg";
-import trailer from "@/assets/videos/trailer.mp4";
+import trailer from "@/assets/videos/trailer-2.mp4";
 const HeroSection = () => {
   const {
     videoRef,
